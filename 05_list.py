@@ -186,3 +186,12 @@ numbers2 = [50, 52, 53, 51]
 new_numbers = sorted(numbers2)
 new_numbers_desc = sorted(numbers2, reverse=True) # desc : 내림차순
 print("7-2. sorted()", numbers2, new_numbers, new_numbers_desc)
+
+#실습(혼자)
+
+apple = ['pad', 'phone', 'pods', 'max', 'book', 'tag']
+print(len(apple))
+apple.append('keyboard')
+print(apple)
+print(len(apple))
+
