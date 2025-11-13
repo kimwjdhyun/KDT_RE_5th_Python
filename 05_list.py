@@ -195,3 +195,8 @@ apple.append('keyboard')
 print(apple)
 print(len(apple))
 
+apple.extend(['vision', 'mac'])
+print(apple)
+
+apple.insert(5, 'pro')
+print(apple)
