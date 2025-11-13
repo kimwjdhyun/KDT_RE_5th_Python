@@ -54,9 +54,10 @@
 # 2조 발표자:{n2}-주제:{t2}
 # 3조 발표자:{n3}-주제:{t3}''')
 
-year, month, day = input("년, 월, 일을 입력해주세요").split()
-day, min, sec = input("시, 분, 초를 입력해주세요").split()
+# year, month, day = input("년, 월, 일을 입력해주세요").split()
+# day, min, sec = input("시, 분, 초를 입력해주세요").split()
 
-print(f'''
-RE3의개강일은 {year}년 {month}월 {day}일
-시작 시간은 {day}시 {min}분 {sec}초 입니다.''')
+# print(f'''
+# RE3의개강일은 {year}년 {month}월 {day}일
+# 시작 시간은 {day}시 {min}분 {sec}초 입니다.''')
+
