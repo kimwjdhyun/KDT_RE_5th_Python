@@ -200,3 +200,9 @@ print(apple)
 
 apple.insert(5, 'pro')
 print(apple)
+
+apple.remove('keyboard')
+print(apple)
+print(apple.pop())
+print(apple.pop(3))
+print(apple)
