@@ -64,7 +64,7 @@ print(int(year)-1)
 # month = 48584
 # 총금액 = month * 36
 # print(총금액)
-
+#=================================================================
 # 연습(11.13)
 '''
 apple = ['pad', 'phone', 'pods', 'max', 'book', 'tag']
@@ -97,3 +97,22 @@ print(sorted_apple_r)
 print(apple)
 '''
 
+letters = "python"
+print(letters[0], letters[2]) # p t
+
+license_plate = "24가 2210"
+print(license_plate[3:]) # 2210
+
+string = "홀짝홀짝홀짝"
+print(string[::2]) # 홀홀홀
+
+string = "python"
+print(string[::-1]) # nohtyp
+
+phone_number = "010-1234-5678"
+phone_number1 = phone_number.replace("-", "")
+print(phone_number1) # 010 1234 5678
+
+string = 'abcdfe2a354a32a'
+string1 = string.replace("a", "A")
+print(string1)
