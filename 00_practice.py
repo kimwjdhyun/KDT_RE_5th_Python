@@ -1,4 +1,4 @@
-
+# 연습(11.12)
 # print("Hello World!")
 
 # print("Mary's cosmetics")
@@ -64,4 +64,36 @@ print(int(year)-1)
 # month = 48584
 # 총금액 = month * 36
 # print(총금액)
+
+# 연습(11.13)
+'''
+apple = ['pad', 'phone', 'pods', 'max', 'book', 'tag']
+print(len(apple))
+apple.append('keyboard')
+print(apple)
+print(len(apple))
+
+apple.extend(['vision', 'mac'])
+print(apple)
+
+apple.insert(5, 'pro')
+print(apple)
+
+apple.remove('keyboard')
+print(apple)
+print(apple.pop())
+print(apple.pop(3))
+print(apple)
+
+apple.sort()
+print(apple)
+apple.sort(reverse=True)
+print(apple)
+
+sorted_apple = sorted(apple)
+sorted_apple_r = sorted(apple, reverse=True)
+print(sorted_apple)
+print(sorted_apple_r)
+print(apple)
+'''
 
