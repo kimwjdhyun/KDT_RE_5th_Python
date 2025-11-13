@@ -61,6 +61,7 @@ print(int(year)-3)
 print(int(year)-2)
 print(int(year)-1)
 '''
-month = 48584
-총금액 = month * 36
-print(총금액)
+# month = 48584
+# 총금액 = month * 36
+# print(총금액)
+
