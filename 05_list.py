@@ -133,7 +133,8 @@ print("참외" not in fruits)
 # 문제 1. 부분 삭제 후 연결
 fruits = ["apple", "banana", "cherry", "grape", "watermelon", "strawberry"]
 del fruits[1:4]
-print("result", fruits)
+print("result", fruits) # 해설 result = fruits[:1] + fruits[1:]
+
 
 # 문제 2. 반복 리스트 내부 요소 삭제
 letters = ["A", "B"]
