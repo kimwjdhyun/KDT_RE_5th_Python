@@ -142,3 +142,47 @@ new_letters = letters * 3
 del new_letters[2]
 print(new_letters)
 '''
+#====================
+# 리스트 주요 메서드
+#====================
+
+# 길이
+numbers = [1,2,3,4,5]
+print("1.len()", len(numbers), len("codingon"))
+
+# 삽입
+numbers.append(6)
+numbers.append(7)
+numbers.append(8)
+print("2. append()", numbers)
+
+numbers. insert(2, 2.5)
+numbers. insert(4, 3.5)
+print("3. insert()", numbers)
+
+numbers.extend([9, 10])
+print("4. extend()", numbers)
+
+# 삭제
+numbers.append(2.5)
+numbers.remove(2.5)
+print("5. remove()", numbers)
+
+a = numbers.pop(1)
+print("6. pop()삭제한 요소", a)
+print(numbers)
+b = numbers.pop()
+print("6. pop()삭제한 요소", b)
+print(numbers)
+
+# 정렬
+numbers1 = [3,2,1,4]
+numbers1.sort()
+print("7-1. sort()", numbers1)
+numbers1.sort(reverse=True)
+print("7-1. sort(reverse=True)", numbers1)
+
+numbers2 = [50, 52, 53, 51]
+new_numbers = sorted(numbers2)
+new_numbers_desc = sorted(numbers2, reverse=True) # desc : 내림차순
+print("7-2. sorted()", numbers2, new_numbers, new_numbers_desc)
