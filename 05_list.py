@@ -187,3 +187,48 @@ new_numbers = sorted(numbers2)
 new_numbers_desc = sorted(numbers2, reverse=True) # desc : 내림차순
 print("7-2. sorted()", numbers2, new_numbers, new_numbers_desc) # 7-2. sorted() [50, 52, 53, 51] [50, 51, 52, 53] [53, 52, 51, 50]
 '''
+
+# 뒤집기
+# my_numbers = [100,101,104, 103, 102]
+# my_numbers.reverse() # 리스트 자체를 뒤집음(원본 변경)
+# print("8-1. reverse()", my_numbers) # sort(reverse=True)는 정렬, reverse()는 뒤집기만 함.
+# 8-1. reverse() [102, 103, 104, 101, 100]
+
+# my_numbers2 = list(reversed(my_numbers)) # reversed()는 원본 배열을 바꾸지않음
+# print("8-2. reversed()", my_numbers2, my_numbers)
+# 8-2. reversed() [100, 101, 104, 103, 102] [102, 103, 104, 101, 100]
+
+# count, max, min, sum 
+numbers = [1, 2, 2, 2, 2, 3, 4, 5, 6, 7]
+# print("9. count()", numbers.count(2))
+# print("10. max/min", max(numbers), min(numbers))
+# print("11. sum", sum(numbers))
+
+# 실습 1. 리스트 주요 메서드 복습 문제
+# 문제 1. 기차 탑승 시뮬레이션
+
+a = ["철수", "영희"]
+a.extend(["민수", "지훈"])
+print(a)
+a.remove("영희")
+print(a)
+a.insert(1, "수진")
+print(a)
+a.remove("민수")
+a.reverse()
+print(a)
+
+
+ # 문제 2. 숫자 처리 게임
+
+card = [5, 3, 7]
+card.extend([4, 9])
+print(card)
+print(max(card), min(card))
+print(sum(card))
+card.sort()
+print(card)
+card.pop()
+print(card)
+
+

@@ -96,7 +96,7 @@ print(sorted_apple)
 print(sorted_apple_r)
 print(apple)
 '''
-
+'''
 letters = "python"
 print(letters[0], letters[2]) # p t
 
@@ -133,7 +133,7 @@ name1 = "김민수"
 age1 = 10
 name2 = "이철희"
 age2 = 13
-print(f'''"이름: {name1} 나이: {age1}
+print(f'''이름: {name1} 나이: {age1}
  이름: {name2} 나이: {age2}
       ''')
 
@@ -148,3 +148,5 @@ print(분기[:7])
 data = "   삼성전자    "
 data1 = data.strip()
 print(data1) # 문자열에서 strip() 사용시 좌우 공백 제거
+'''
+
