@@ -9,7 +9,7 @@ s1 = {1,2,3}
 print(s1, type(s1)) # {1, 2, 3} <class 'set'>
 
 s2 = {1,1,1,1,1,2,2,2,3,3,3,3,3,4,4,}
-print(s2) # {1, 2, 3, 4}, 중복 허용 x
+print(s2) # {1, 2, 3, 4}, 중복 허용 x(자동 제거)
 
 # 빈 set 만들기
 # - 중괄호에 원소를 넣지 않고 만들면 빈 dict(dictionary)로 인식됨
@@ -64,22 +64,23 @@ s_symm2 = a.symmetric_difference(b)
 print("대칭 차집합", s_symm1) # 대칭 차집합 {1, 2, 4, 5}
 print("대칭 차집합", s_symm2) # 대칭 차집합 {1, 2, 4, 5}
 '''
+'''
 # 실습 1. set 종합 연습
 # 문제1. 중복 제거 및 개수 세기
-'''
+
 submissions = ['kim', 'lee', 'kim', 'park', 'choi', 'lee', 'lee']
 submissions1 = set(submissions)
-print(submissions1) # {'kim', 'park', 'choi', 'lee'}
+print(submissions1)                        # {'kim', 'park', 'choi', 'lee'}
 print("제출한 학생 수:", len(submissions1)) # 제출한 학생 수: 4
-print("제출자 명단:", submissions1) # 제출자 명단: {'kim', 'park', 'choi', 'lee'}
+print("제출자 명단:", submissions1)         # 제출자 명단: {'kim', 'park', 'choi', 'lee'}
 
 # 문제2. 공통 관심사 찾기
 user1 = {'SF', 'Action', 'Drama'}
 user2 = {'Drama', 'Romance', 'Action'}
 print("공통 관심 장르: ",user1&user2) # 공통 관심 장르:  {'Drama', 'Action'}
 print("서로 다른 장르: ",user1^user2) # 서로 다른 장르:  {'SF', 'Romance'}
-print("전체 장르: ",user1|user2) # 전체 장르:  {'Romance', 'SF', 'Drama', 'Action'}
-'''
+print("전체 장르: ",user1|user2)      # 전체 장르:  {'Romance', 'SF', 'Drama', 'Action'}
+
 
 # set 메서드
 s1 = {1,2,3}
@@ -122,7 +123,7 @@ print(a.issuperset(b)) # True
 print(a.isdisjoint(b)) # False
 print(a.isdisjoint(c)) # False
 print(b.isdisjoint(c)) # True
-
+'''
 # 실습 2 
 
 # 문제 1. 부분집합 관계 판단
@@ -130,3 +131,6 @@ my_certficates = {'SQL', 'Python', 'Linux'}
 job_required = {'SQL', 'Python'}
 
 print("지원 자격 충족 여부 : ", job_required.issubset(my_certficates)) # 지원 자격 충족 여부 :  True
+a = job_required.issubset(my_certficates)
+
+print(f"지원 자격 충족 여부 : ", a)

@@ -188,47 +188,48 @@ new_numbers_desc = sorted(numbers2, reverse=True) # desc : 내림차순
 print("7-2. sorted()", numbers2, new_numbers, new_numbers_desc) # 7-2. sorted() [50, 52, 53, 51] [50, 51, 52, 53] [53, 52, 51, 50]
 '''
 
-# 뒤집기
-# my_numbers = [100,101,104, 103, 102]
-# my_numbers.reverse() # 리스트 자체를 뒤집음(원본 변경)
-# print("8-1. reverse()", my_numbers) # sort(reverse=True)는 정렬, reverse()는 뒤집기만 함.
-# 8-1. reverse() [102, 103, 104, 101, 100]
+# reverse() : 리스트 요소 뒤집기
+my_numbers = [100,101,104, 103, 102]
+my_numbers.reverse() # 리스트 자체를 뒤집음(원본 변경)
+print("8-1. reverse()", my_numbers) # sort(reverse=True)는 정렬, reverse()는 뒤집기만 함.
+# 출력 : 8-1. reverse() [102, 103, 104, 101, 100]
 
-# my_numbers2 = list(reversed(my_numbers)) # reversed()는 원본 배열을 바꾸지않음
-# print("8-2. reversed()", my_numbers2, my_numbers)
-# 8-2. reversed() [100, 101, 104, 103, 102] [102, 103, 104, 101, 100]
+my_numbers2 = list(reversed(my_numbers)) # reversed()는 원본 배열을 바꾸지않음
+print("8-2. reversed()", my_numbers2, my_numbers)
+# 출력 : 8-2. reversed() [100, 101, 104, 103, 102] [102, 103, 104, 101, 100]
 
 # count, max, min, sum 
-# numbers = [1, 2, 2, 2, 2, 3, 4, 5, 6, 7]
-# print("9. count()", numbers.count(2))
-# print("10. max/min", max(numbers), min(numbers))
-# print("11. sum", sum(numbers))
+numbers = [1, 2, 2, 2, 2, 3, 4, 5, 6, 7]
+print("9. count()", numbers.count(2)) # 9. count() 4
+print("10. max/min", max(numbers), min(numbers)) # 10. max/min 7 1
+print("11. sum", sum(numbers)) # 11. sum 34
 
 # 실습 1. 리스트 주요 메서드 복습 문제
 # 문제 1. 기차 탑승 시뮬레이션
 
 a = ["철수", "영희"]
 a.extend(["민수", "지훈"])
-print(a)
+print(a) # ['철수', '영희', '민수', '지훈']
 a.remove("영희")
-print(a)
+print(a) # ['철수', '민수', '지훈']
 a.insert(1, "수진")
-print(a)
+print(a) # ['철수', '수진', '민수', '지훈']
 a.remove("민수")
 a.reverse()
-print(a)
+print(a) # ['지훈', '수진', '철수']
 
 
- # 문제 2. 숫자 처리 게임
+
+# 문제 2. 숫자 처리 게임
 
 card = [5, 3, 7]
 card.extend([4, 9])
-print(card)
-print(max(card), min(card))
-print(sum(card))
+print(card) # [5, 3, 7, 4, 9]
+print(max(card), min(card)) # 9 3
+print(sum(card)) # 28
 card.sort()
-print(card)
+print(card) # [3, 4, 5, 7, 9]
 card.pop()
-print(card)
+print(card) # [3, 4, 5, 7]
 
 
