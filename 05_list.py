@@ -199,7 +199,7 @@ print("7-2. sorted()", numbers2, new_numbers, new_numbers_desc) # 7-2. sorted() 
 # 8-2. reversed() [100, 101, 104, 103, 102] [102, 103, 104, 101, 100]
 
 # count, max, min, sum 
-numbers = [1, 2, 2, 2, 2, 3, 4, 5, 6, 7]
+# numbers = [1, 2, 2, 2, 2, 3, 4, 5, 6, 7]
 # print("9. count()", numbers.count(2))
 # print("10. max/min", max(numbers), min(numbers))
 # print("11. sum", sum(numbers))

@@ -58,21 +58,28 @@ print("새로운 튜플", new_tuple) # 새로운 튜플 (100, 20, 30)
 
 # 실습1. 튜플 종합 연습
 
-#step1.
+#step1. 손상되 고객 정보 복원
+# 고객 이름을  'eunji'로 변경
+# 수정한 결과를 restored_user에 저장하고 출력
 user = ("minji", "25", "seoul")
 restored_user = ("eunji",) + user[1:]
 print(restored_user) # ('eunji', 25, 'seoul')
-#step2.
+#step2. 언패킹
+# 튜플 restored_user 언패킹 하여 name, age, city에 저장
 name, age, city = restored_user
 print(restored_user) # ('eunji', '25', 'seoul')
-# step3.
+# step3. 통계 분석
+# minji 등장 횟수 출력
+# soojin 등장 위치(인덱스)
 users =  ("minji", "eunji", "soojin", "minji", "minji")
 print(users.count("minji")) # 3
 print(users.index("soojin")) # 2
+# step4. 정렬
+
 users2 = list(users)
-print(users2)
+print(users2) # ['minji', 'eunji', 'soojin', 'minji', 'minji']
 users2[:] = ["민지", "은지", "수진", "민지", "민지"]
 users2.sort()
-print(users2)
+print(users2) # ['민지', '민지', '민지', '수진', '은지']
 users2_t = tuple(users2)
-print(users2_t)
+print(users2_t) # ('민지', '민지', '민지', '수진', '은지')
