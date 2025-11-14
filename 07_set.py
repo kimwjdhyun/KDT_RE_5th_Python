@@ -66,7 +66,7 @@ print("대칭 차집합", s_symm2) # 대칭 차집합 {1, 2, 4, 5}
 '''
 # 실습 1. set 종합 연습
 # 문제1. 중복 제거 및 개수 세기
-
+'''
 submissions = ['kim', 'lee', 'kim', 'park', 'choi', 'lee', 'lee']
 submissions1 = set(submissions)
 print(submissions1) # {'kim', 'park', 'choi', 'lee'}
@@ -79,3 +79,54 @@ user2 = {'Drama', 'Romance', 'Action'}
 print("공통 관심 장르: ",user1&user2) # 공통 관심 장르:  {'Drama', 'Action'}
 print("서로 다른 장르: ",user1^user2) # 서로 다른 장르:  {'SF', 'Romance'}
 print("전체 장르: ",user1|user2) # 전체 장르:  {'Romance', 'SF', 'Drama', 'Action'}
+'''
+
+# set 메서드
+s1 = {1,2,3}
+
+# 원소 추가
+s1.add(4)
+print("원소 추가", s1) # 원소 추가 {1, 2, 3, 4}
+
+s1.update((5,6,7))
+print("여러 원소 추가", s1) # 여러 원소 추가 {1, 2, 3, 4, 5, 6, 7}
+
+# 원소 제거
+s1.remove(4)
+print("원소 제거1", s1) # 원소 제거1 {1, 2, 3, 5, 6, 7}
+# s1.remove(100) # KeyError: 100 - 존재하지 없는 원소 삭제 시도 시 에러
+
+s1.discard(100) # 존재하지 않는 원소 무시
+s1.discard(6)
+print("원소 제거2", s1) # 원소 제거2 {1, 2, 3, 5, 7}
+
+deleted = s1.pop() # 임의의 원소를 제거하고 반환하여 출력함
+print("원소 제거3", s1, deleted) # 원소 제거3 {2, 3, 5, 7} 1
+
+
+
+# 부분 집합 (subset) 관련 메서드
+a = {10, 20, 30, 40, 50} # 상위 집합
+b = {20, 30 ,40, 50} # 부분 집합
+c = {10, 200, 300, 400, 500}
+
+# 부분 집합 여부 판단
+print(b.issubset(a)) # True
+print(a.issubset(b)) # False
+
+# 상위 집합 여부 판단
+print(b.issuperset(a)) # False
+print(a.issuperset(b)) # True
+
+# 공통 원소가 없는지 여부 판단
+print(a.isdisjoint(b)) # False
+print(a.isdisjoint(c)) # False
+print(b.isdisjoint(c)) # True
+
+# 실습 2 
+
+# 문제 1. 부분집합 관계 판단
+my_certficates = {'SQL', 'Python', 'Linux'}
+job_required = {'SQL', 'Python'}
+
+print("지원 자격 충족 여부 : ", job_required.issubset(my_certficates)) # 지원 자격 충족 여부 :  True
