@@ -69,13 +69,13 @@ print("대칭 차집합", s_symm2) # 대칭 차집합 {1, 2, 4, 5}
 
 submissions = ['kim', 'lee', 'kim', 'park', 'choi', 'lee', 'lee']
 submissions1 = set(submissions)
-print(submissions1)
-print("제출한 학생 수:", len(submissions1))
-print("제출자 명단:", submissions1)
+print(submissions1) # {'kim', 'park', 'choi', 'lee'}
+print("제출한 학생 수:", len(submissions1)) # 제출한 학생 수: 4
+print("제출자 명단:", submissions1) # 제출자 명단: {'kim', 'park', 'choi', 'lee'}
 
 # 문제2. 공통 관심사 찾기
 user1 = {'SF', 'Action', 'Drama'}
 user2 = {'Drama', 'Romance', 'Action'}
-print("공통 관심 장르: ",user1&user2)
-print("서로 다른 장르: ",user1^user2)
-print("전체 장르: ",user1|user2)
+print("공통 관심 장르: ",user1&user2) # 공통 관심 장르:  {'Drama', 'Action'}
+print("서로 다른 장르: ",user1^user2) # 서로 다른 장르:  {'SF', 'Romance'}
+print("전체 장르: ",user1|user2) # 전체 장르:  {'Romance', 'SF', 'Drama', 'Action'}
