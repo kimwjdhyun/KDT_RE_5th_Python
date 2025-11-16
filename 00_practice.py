@@ -195,3 +195,8 @@ print("a의 값은 ", a)
 print("b의 값은 ", b)
 print("a와 b의 합은", a + b)
 
+# 파이썬 분기문
+print(3 == 5) # False
+x = 4
+print(1 < x < 5) # True
+print ((3 == 3) and (4 != 3)) # True
