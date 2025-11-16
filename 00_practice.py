@@ -150,3 +150,22 @@ data1 = data.strip()
 print(data1) # 문자열에서 strip() 사용시 좌우 공백 제거
 '''
 
+price = ['20180728', 100, 130, 140, 150, 160, 170]
+print(price[1:]) # [100, 130, 140, 150, 160, 170]
+
+nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(nums[::2]) # [1, 3, 5, 7, 9]
+print(nums[1::2]) # [2, 4, 6, 8, 10]
+print(nums[::-1]) # [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+
+interest = ['삼성전자', 'LG전자', 'Naver']
+print(interest[0], interest[2]) # 삼성전자 Naver
+
+string = "삼성전자/LG전자/Naver"
+interest = string.split("/")
+print(interest) # ['삼성전자', 'LG전자', 'Naver']
+
+data = [2, 4, 3, 1, 5, 10, 9]
+data.sort()
+print(data) # [1, 2, 3, 4, 5, 9, 10]
+
