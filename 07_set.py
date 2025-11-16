@@ -125,7 +125,7 @@ print(a.isdisjoint(c)) # False
 print(b.isdisjoint(c)) # True
 '''
 # 실습 2 
-
+'''
 # 문제 1. 부분집합 관계 판단
 my_certficates = {'SQL', 'Python', 'Linux'}
 job_required = {'SQL', 'Python'}
@@ -159,4 +159,24 @@ cook = ["피자", "김밥", "만두", "양념치킨", "족발", "피자", "김�
 print(len(cook)) # 12
 
 average = sum(nums) / len(nums)
-print(average)
+print(average) # 4.0
+'''
+price = ['20180728', 100, 130, 140, 150, 160, 170]
+print(price[1:]) # [100, 130, 140, 150, 160, 170]
+
+nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(nums[::2]) # [1, 3, 5, 7, 9]
+print(nums[1::2]) # [2, 4, 6, 8, 10]
+print(nums[::-1]) # [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+
+interest = ['삼성전자', 'LG전자', 'Naver']
+print(interest[0], interest[2]) # 삼성전자 Naver
+
+string = "삼성전자/LG전자/Naver"
+interest = string.split("/")
+print(interest) # ['삼성전자', 'LG전자', 'Naver']
+
+data = [2, 4, 3, 1, 5, 10, 9]
+data.sort()
+print(data) # [1, 2, 3, 4, 5, 9, 10]
+
