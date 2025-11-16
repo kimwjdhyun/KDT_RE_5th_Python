@@ -133,9 +133,8 @@ name1 = "김민수"
 age1 = 10
 name2 = "이철희"
 age2 = 13
-print(f'''이름: {name1} 나이: {age1}
- 이름: {name2} 나이: {age2}
-      ''')
+print(이름: {name1} 나이: {age1}
+ 이름: {name2} 나이: {age2})
 
 상장주식수 = "5,969,782,550"
 컴마제거 = 상장주식수.replace(",","")
@@ -168,4 +167,26 @@ print(interest) # ['삼성전자', 'LG전자', 'Naver']
 data = [2, 4, 3, 1, 5, 10, 9]
 data.sort()
 print(data) # [1, 2, 3, 4, 5, 9, 10]
+
+my_variable = ()
+print(type(my_variable)) # <class 'tuple'>
+
+tuple1 = (1,)
+print(tuple1) # (1,)
+
+interest = ('삼성전자', 'LG전자', 'SK Hynix')
+list1 = list(interest)
+print(type(list1)) # <class 'list'>
+
+interest = ['삼성전자', 'LG전자', 'SK Hynix']
+tuple1 = tuple(interest)
+print(type(tuple1)) # <class 'tuple'>
+
+temp = ('apple', 'banana', 'cake')
+a, b, c = temp
+print(a, b, c) # apple banana cake
+
+data = tuple(range(2, 100, 2))
+print( data )
+
 
