@@ -83,18 +83,18 @@ else:
 
 '''
 # 문제2. 시, 분, 초 구하기
-# time = int(input("초를 입력해주세요. :"))
-# minute = time // 60
-# second = time % 60
-# hour = minute // 60
-# minute %= 60
+time = int(input("초를 입력해주세요. :"))
+minute = time // 60
+second = time % 60
+hour = minute // 60
+minute %= 60
 
-# if hour > 0:
-#     print(f"{hour}시간 {minute}분 {second}초") # 4321 / 1시간 12분 1초
-# elif minute > 0:
-#     print(f"{minute}분 {second}초") # 123 / 2분 3초
-# else:
-#     print(f"{second}초") # 37 / 37초
+if hour > 0:
+    print(f"{hour}시간 {minute}분 {second}초") # 4321 / 1시간 12분 1초
+elif minute > 0:
+    print(f"{minute}분 {second}초") # 123 / 2분 3초
+else:
+    print(f"{second}초") # 37 / 37초
 
 
 # 해설
@@ -115,37 +115,37 @@ else:
 # 중첩 조건문
 # 하나의 if 문 안에 또 다른 if 문을 사용하는 것
 
-user_name = input("관리자 아이디를 입력하세요. :")
-password = input("비밀번호를 입력하세요. :")
+# user_name = input("관리자 아이디를 입력하세요. :")
+# password = input("비밀번호를 입력하세요. :")
 
-if user_name == "admin":
-    if password == "abcd":
-        print("로그인 성공") # 관리자 아이디를 입력하세요. :admin 비밀번호를 입력하세요. :abcd 로그인 성공
-    else:
-        print("비밀번호가 잘못됐습니다.") # 관리자 아이디를 입력하세요. :admin 비밀번호를 입력하세요. :sdfa 비밀번호가 잘못됐습니다.
-else:
-    print("잘못된 사용자입니다.") # 관리자 아이디를 입력하세요. :ad 비밀번호를 입력하세요. :cdsd 잘못된 사용자입니다.
+# if user_name == "admin":
+#     if password == "abcd":
+#         print("로그인 성공") # 관리자 아이디를 입력하세요. :admin 비밀번호를 입력하세요. :abcd 로그인 성공
+#     else:
+#         print("비밀번호가 잘못됐습니다.") # 관리자 아이디를 입력하세요. :admin 비밀번호를 입력하세요. :sdfa 비밀번호가 잘못됐습니다.
+# else:
+#     print("잘못된 사용자입니다.") # 관리자 아이디를 입력하세요. :ad 비밀번호를 입력하세요. :cdsd 잘못된 사용자입니다.
 
 
 
-# 실습3. 중첩 조건문 연습
-# 문제 1. 편의점 도시락 구매하기
+# # 실습3. 중첩 조건문 연습
+# # 문제 1. 편의점 도시락 구매하기
 
-food = input("식품명을 입력하세요.")
-price = int(input("금액을 입력하세요."))
+# food = input("식품명을 입력하세요.")
+# price = int(input("금액을 입력하세요."))
 
-if food == "김밥":
-    if price >= 2500:
-        print("구매가 완료되었습니다.")
-    else:
-        print("잔액이 부족합니다.")
-if food == "삼각김밥":
-    if price >= 1500:
-        print("구매가 완료되었습니다.")
-    else:
-        print("잔액이 부족합니다.")
-if food == "도시락":
-    if price >= 4000:
-        print("구매가 완료되었습니다.")
-    else:
-        print("잔액이 부족합니다.")
+# if food == "김밥":
+#     if price >= 2500:
+#         print("구매가 완료되었습니다.")
+#     else:
+#         print("잔액이 부족합니다.")
+# if food == "삼각김밥":
+#     if price >= 1500:
+#         print("구매가 완료되었습니다.")
+#     else:
+#         print("잔액이 부족합니다.")
+# if food == "도시락":
+#     if price >= 4000:
+#         print("구매가 완료되었습니다.")
+#     else:
+        # print("잔액이 부족합니다.")

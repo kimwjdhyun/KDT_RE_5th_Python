@@ -200,3 +200,7 @@ print(3 == 5) # False
 x = 4
 print(1 < x < 5) # True
 print ((3 == 3) and (4 != 3)) # True
+
+
+# 11월 17일 복습
+
