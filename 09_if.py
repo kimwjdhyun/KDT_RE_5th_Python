@@ -23,10 +23,29 @@
 # if a > 100:
 #    pass # 비워둘 경우 pass를 써야함(안쓸경우 에러 발생)
 
-weather = input("오늘 날씨는 어떤가요?")
-weather1 = "비"
-weather2 = "맑음"
-if weather==weather1:
-   print("우산을 챙기세요!") 
-if weather==weather2:
-    print("선크림을 바르세요!")
+# 실습 2. if 조건문 연습
+# 문제1. 날씨에 따른 준비물 안내
+# weather = input("오늘 날씨는 어떤가요?(비 / 맑음) :")
+# weather1 = "비"
+# weather2 = "맑음"
+# if weather==weather1:
+#    print("우산을 챙기세요!") # 비 / 우산을 챙기세요!
+# if weather==weather2:
+#     print("선크림을 바르세요!") # 맑음 / 선크림을 바르세요!
+
+# if -else 문
+# 조건이 참일 때는 if문을, 조건이 거짓일 때는 else문 실행
+# else -> ~이 아니라면의 의미 -> 조건이 필요 x, if문과 반드시 같이 나와야 함.
+# a = int(input())
+# if a> 10:
+#     print("a는 10보다 커요.") # 4 / a는 10보다 작아요.
+# else:
+#     print("a는 10보다 작아요.") # 16 / a는 10보다 커요.
+
+# 실습 2. if -else 연습
+# 문제 1. 짝수 홀수 판별하기
+a = int(input("정수를 입력해 주세요. :"))
+if a%2 == 1:
+    print("홀수입니다.") # 36 / 짝수입니다.
+else:
+    print("짝수입니다.") # 9999 / 홀수입니다.
