@@ -56,7 +56,70 @@ user_data = {
     "email" : "wjdhyun@naver.com",
     "password" : "123456789"
 }
-
+'''
 key = input("조회할 정보를 입력하세요(username, email, password):")
-result = user_data.get(key, "존재하지 않는 데이터 입니다.")
-print(result)
+result = user_data.get(key, "존재하지 않는 데이터 입니다.") # 조회할 정보를 입력하세요(username, email, password):name
+print(result) # 존재하지 않는 데이터 입니다.
+'''
+# 데이터 추가 및 수정
+# 1) 기본적인 추가, 수정 방법
+user_data["phone"] = "010-1234-5678" 
+user_data["username"] = "kimwjdhyun"
+print(user_data) # {'username': 'kimwjdhyun', 'email': 'wjdhyun@naver.com', 'password': '123456789', 'phone': '010-1234-5678'}
+
+# 2) update() 메서드 활용
+user_data.update({"nickname" : "kim"})
+
+# 키가 문자열인 경우
+user_data.update(phone="010-9876-5432")
+
+# 다른 딕셔너리 추가
+extra_data = {"city" : "jeju"}
+user_data.update(extra_data)
+
+print(user_data) # {'username': 'kimwjdhyun', 'email': 'wjdhyun@naver.com', 'password': '123456789', 'phone': '010-9876-5432', 'nickname': 'kim', 'city': 'jeju'}
+
+# 딕셔너리 데이터 삭제
+del user_data["city"]
+print(user_data) # city 항목 삭제
+
+# 키로 제거(pop()메서드)
+nickname = user_data.pop("nickname")
+print("pop>> ",user_data, nickname, sep=" /// ") # pop>>  /// {'username': 'kimwjdhyun', 'email': 'wjdhyun@naver.com', 'password': '123456789', 'phone': '010-9876-5432'} /// kim
+
+# 가장 마지막 요소를 제거(popitem())
+phone = user_data.popitem()
+print("popitem>> ", user_data, phone, sep = " /// ") # popitem>>  /// {'username': 'kimwjdhyun', 'email': 'wjdhyun@naver.com', 'password': '123456789'} /// ('phone', '010-9876-5432')
+
+# dict 비우기(clear())
+user_data.clear()
+print("clear>> ", user_data) # clear>>  {} 빈 딕셔너리
+
+# dict 삭제하기
+# del user_data
+# print(user_data) # NameError: name 'user_data' is not defined 삭제되서 에러 발생
+
+# 실습 1. 딕셔너리 종합 문제(1)
+# user = {}
+# print(type(user)) # <class 'dict'>
+# user.update({"username" : "skywalker", "email" : "sky@example.com", "level" : "5"})
+# print(user) # {'username': 'skywalker', 'email': 'sky@example.com', 'level': '5'}
+# email_value = user["email"]
+# print(email_value) # sky@example.com
+# user["level"] = "6"
+# print(user) # {'username': 'skywalker', 'email': 'sky@example.com', 'level': '6'}
+# print(user.get("phone", "미입력")) # 미입력
+# user.update({"nickname" : "sky"})
+# user.pop("email")
+# print(user) # {'username': 'skywalker', 'level': '6', 'nickname': 'sky'}
+# user.update({"signup_date" : "2025-11-17"})
+# print(user.setdefault("signup_date", "2025-11-17")) # {'username': 'skywalker', 'level': '6', 'nickname': 'sky'}, # 2025-11-17
+
+# 실습2. 딕셔너리 종합 연습 문제(2)
+students = {}
+students.update({"Alice" : 85, "Bob" : 90, "Charlie" : 95})
+print(students, type(students)) # {'Alice': 85, 'Bob': 90, 'Charlie': 95} <class 'dict'>
+students.update({"David" : 80})
+students["Alice"] = 88
+students.pop("Bob")
+print(students)
