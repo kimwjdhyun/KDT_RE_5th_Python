@@ -149,58 +149,95 @@ data1 = data.strip()
 print(data1) # 문자열에서 strip() 사용시 좌우 공백 제거
 '''
 
-price = ['20180728', 100, 130, 140, 150, 160, 170]
-print(price[1:]) # [100, 130, 140, 150, 160, 170]
+# price = ['20180728', 100, 130, 140, 150, 160, 170]
+# print(price[1:]) # [100, 130, 140, 150, 160, 170]
 
-nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-print(nums[::2]) # [1, 3, 5, 7, 9]
-print(nums[1::2]) # [2, 4, 6, 8, 10]
-print(nums[::-1]) # [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+# nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# print(nums[::2]) # [1, 3, 5, 7, 9]
+# print(nums[1::2]) # [2, 4, 6, 8, 10]
+# print(nums[::-1]) # [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
 
-interest = ['삼성전자', 'LG전자', 'Naver']
-print(interest[0], interest[2]) # 삼성전자 Naver
+# interest = ['삼성전자', 'LG전자', 'Naver']
+# print(interest[0], interest[2]) # 삼성전자 Naver
 
-string = "삼성전자/LG전자/Naver"
-interest = string.split("/")
-print(interest) # ['삼성전자', 'LG전자', 'Naver']
+# string = "삼성전자/LG전자/Naver"
+# interest = string.split("/")
+# print(interest) # ['삼성전자', 'LG전자', 'Naver']
 
-data = [2, 4, 3, 1, 5, 10, 9]
-data.sort()
-print(data) # [1, 2, 3, 4, 5, 9, 10]
+# data = [2, 4, 3, 1, 5, 10, 9]
+# data.sort()
+# print(data) # [1, 2, 3, 4, 5, 9, 10]
 
-my_variable = ()
-print(type(my_variable)) # <class 'tuple'>
+# my_variable = ()
+# print(type(my_variable)) # <class 'tuple'>
 
-tuple1 = (1,)
-print(tuple1) # (1,)
+# tuple1 = (1,)
+# print(tuple1) # (1,)
 
-interest = ('삼성전자', 'LG전자', 'SK Hynix')
-list1 = list(interest)
-print(type(list1)) # <class 'list'>
+# interest = ('삼성전자', 'LG전자', 'SK Hynix')
+# list1 = list(interest)
+# print(type(list1)) # <class 'list'>
 
-interest = ['삼성전자', 'LG전자', 'SK Hynix']
-tuple1 = tuple(interest)
-print(type(tuple1)) # <class 'tuple'>
+# interest = ['삼성전자', 'LG전자', 'SK Hynix']
+# tuple1 = tuple(interest)
+# print(type(tuple1)) # <class 'tuple'>
 
-temp = ('apple', 'banana', 'cake')
-a, b, c = temp
-print(a, b, c) # apple banana cake
+# temp = ('apple', 'banana', 'cake')
+# a, b, c = temp
+# print(a, b, c) # apple banana cake
 
-data = tuple(range(2, 100, 2))
-print( data ) # (2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98)
+# data = tuple(range(2, 100, 2))
+# print( data ) # (2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98)
 
-a = 10
-b = 20
-print("a의 값은 ", a)
-print("b의 값은 ", b)
-print("a와 b의 합은", a + b)
+# a = 10
+# b = 20
+# print("a의 값은 ", a)
+# print("b의 값은 ", b)
+# print("a와 b의 합은", a + b)
 
-# 파이썬 분기문
-print(3 == 5) # False
-x = 4
-print(1 < x < 5) # True
-print ((3 == 3) and (4 != 3)) # True
+# # 파이썬 분기문
+# print(3 == 5) # False
+# x = 4
+# print(1 < x < 5) # True
+# print ((3 == 3) and (4 != 3)) # True
 
 
 # 11월 17일 복습
+#구분자
+# year, month, day, hour, minute, second = input().split()
+
+# print(year, month, day, sep='-', end='T')
+# print(hour, minute, second, sep=':')2025, 11, 17, 21, 26, 37
+# #논리 연산자
+# korean = 92
+# english = 47
+# mathematics = 86
+# science = 81
+ 
+# print(korean >= 50 and english >= 50 and mathematics >= 50 and science >= 50)
+
+# kor = int(90)
+# eng = int(81)
+# mat = int(86)
+# sci = int(80)
+
+# print(kor >= 90 and eng > 80 and mat > 85 and sci >=80)
+
+# kor1 = int(90)
+# eng1 = int(80)
+# mat = int(85)
+# sci1 = int(80)
+
+# print(kor1 >= 90 and eng1 > 80 and mat1 > 85 and sci1 >=80)
+
+
+#  문자열 여러줄
+
+# s = ("""
+# 'Python' is a 'programming language'
+# that lets you work quickly
+# and
+# integrate systems more effectively.
+# """)
+# print(s)
 
