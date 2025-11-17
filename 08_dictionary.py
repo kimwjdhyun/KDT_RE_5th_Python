@@ -118,7 +118,7 @@ print("쌍", list(user_data.items())) # 쌍 [('username', 'wjdhyun'), ('email', 
 
 
 
-'''
+
 # 실습 1. 딕셔너리 종합 문제(1)
 user = {}
 print(type(user)) # <class 'dict'>
@@ -143,4 +143,3 @@ students.update({"David" : 80})
 students["Alice"] = 88
 students.pop("Bob")
 print(students) # {'Alice': 88, 'Charlie': 95, 'David': 80}
-'''
