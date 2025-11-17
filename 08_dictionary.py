@@ -100,20 +100,20 @@ print("clear>> ", user_data) # clear>>  {} 빈 딕셔너리
 # print(user_data) # NameError: name 'user_data' is not defined 삭제되서 에러 발생
 
 # 실습 1. 딕셔너리 종합 문제(1)
-# user = {}
-# print(type(user)) # <class 'dict'>
-# user.update({"username" : "skywalker", "email" : "sky@example.com", "level" : "5"})
-# print(user) # {'username': 'skywalker', 'email': 'sky@example.com', 'level': '5'}
-# email_value = user["email"]
-# print(email_value) # sky@example.com
-# user["level"] = "6"
-# print(user) # {'username': 'skywalker', 'email': 'sky@example.com', 'level': '6'}
-# print(user.get("phone", "미입력")) # 미입력
-# user.update({"nickname" : "sky"})
-# user.pop("email")
-# print(user) # {'username': 'skywalker', 'level': '6', 'nickname': 'sky'}
-# user.update({"signup_date" : "2025-11-17"})
-# print(user.setdefault("signup_date", "2025-11-17")) # {'username': 'skywalker', 'level': '6', 'nickname': 'sky'}, # 2025-11-17
+user = {}
+print(type(user)) # <class 'dict'>
+user.update({"username" : "skywalker", "email" : "sky@example.com", "level" : "5"})
+print(user) # {'username': 'skywalker', 'email': 'sky@example.com', 'level': '5'}
+email_value = user["email"]
+print(email_value) # sky@example.com
+user["level"] = "6"
+print(user) # {'username': 'skywalker', 'email': 'sky@example.com', 'level': '6'}
+print(user.get("phone", "미입력")) # 미입력
+user.update({"nickname" : "sky"})
+user.pop("email")
+print(user) # {'username': 'skywalker', 'level': '6', 'nickname': 'sky'}
+user.update({"signup_date" : "2025-11-17"})
+print(user.setdefault("signup_date", "2025-11-17")) # {'username': 'skywalker', 'level': '6', 'nickname': 'sky'}, # 2025-11-17
 
 # 실습2. 딕셔너리 종합 연습 문제(2)
 students = {}
@@ -122,4 +122,4 @@ print(students, type(students)) # {'Alice': 85, 'Bob': 90, 'Charlie': 95} <class
 students.update({"David" : 80})
 students["Alice"] = 88
 students.pop("Bob")
-print(students)
+print(students) # {'Alice': 88, 'Charlie': 95, 'David': 80}
