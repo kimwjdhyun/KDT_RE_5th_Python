@@ -241,3 +241,10 @@ print(data1) # 문자열에서 strip() 사용시 좌우 공백 제거
 # """)
 # print(s)
 
+# 튜플 리스트, rangeI()
+
+# a = tuple(range(-10, 10, 2))
+# b = tuple(range(-10, 10, 3))
+# print(a, b, sep = '\n')
+
+# 11 18 슬라이스부터 할것
