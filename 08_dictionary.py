@@ -56,11 +56,11 @@ user_data = {
     "email" : "wjdhyun@naver.com",
     "password" : "123456789"
 }
-'''
+
 key = input("조회할 정보를 입력하세요(username, email, password):")
 result = user_data.get(key, "존재하지 않는 데이터 입니다.") # 조회할 정보를 입력하세요(username, email, password):name
 print(result) # 존재하지 않는 데이터 입니다.
-'''
+
 # 데이터 추가 및 수정
 # 1) 기본적인 추가, 수정 방법
 user_data["phone"] = "010-1234-5678" 
@@ -96,8 +96,8 @@ user_data.clear()
 print("clear>> ", user_data) # clear>>  {} 빈 딕셔너리
 
 # dict 삭제하기
-# del user_data
-# print(user_data) # NameError: name 'user_data' is not defined 삭제되서 에러 발생
+del user_data
+print(user_data) # NameError: name 'user_data' is not defined 삭제되서 에러 발생
 
 # dict 주요 메서드
 user_data = {
