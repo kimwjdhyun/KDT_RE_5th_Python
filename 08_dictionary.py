@@ -99,6 +99,26 @@ print("clear>> ", user_data) # clear>>  {} 빈 딕셔너리
 # del user_data
 # print(user_data) # NameError: name 'user_data' is not defined 삭제되서 에러 발생
 
+# dict 주요 메서드
+user_data = {
+    "username" : "wjdhyun",
+    "email" : "wjdhyun@naver.com",
+    "password" : "123456789"
+}
+
+# keys() : 모든 키를 반환(리스트처럼 보이지만 실제 리스트는 x)
+print("키", user_data.keys()) # 키 dict_keys(['username', 'email', 'password'])
+print("키", list(user_data.keys())) # 키 ['username', 'email', 'password']
+
+# values : 모든 값을 반환
+print("값", list(user_data.values())) # 값 ['wjdhyun', 'wjdhyun@naver.com', '123456789']
+
+# items : 모든 (키, 값)쌍을 반환
+print("쌍", list(user_data.items())) # 쌍 [('username', 'wjdhyun'), ('email', 'wjdhyun@naver.com'), ('password', '123456789')]
+
+
+
+'''
 # 실습 1. 딕셔너리 종합 문제(1)
 user = {}
 print(type(user)) # <class 'dict'>
@@ -113,7 +133,7 @@ user.update({"nickname" : "sky"})
 user.pop("email")
 print(user) # {'username': 'skywalker', 'level': '6', 'nickname': 'sky'}
 user.update({"signup_date" : "2025-11-17"})
-print(user.setdefault("signup_date", "2025-11-17")) # {'username': 'skywalker', 'level': '6', 'nickname': 'sky'}, # 2025-11-17
+print(user.setdefault("signup_date", "2025-11-17")) # {'username': 'skywalker', 'level': '6', 'nickname': 'sky'}, 2025-11-17
 
 # 실습2. 딕셔너리 종합 연습 문제(2)
 students = {}
@@ -123,3 +143,4 @@ students.update({"David" : 80})
 students["Alice"] = 88
 students.pop("Bob")
 print(students) # {'Alice': 88, 'Charlie': 95, 'David': 80}
+'''
