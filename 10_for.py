@@ -138,32 +138,145 @@
 #     x = sum(range(1, int(user_number)+1))
 #     print(x) # 100 / 4950
 
+# #해설 
+# num = int(input("숫자를 입력하세요"))
+# sum = 0
 
-# 문제 2. 구구단 만들기
+# for i in range(num+1):
+#     sum += 1
+#     print sum
+
+# # 문제 2. 구구단 만들기
 # user_number = int(input("수를 입력하세요. :"))
 
 # for i in range(1, 10):
 #     print(f"{user_number} X {i} = {user_number * i}")
-# # 수를 입력하세요. :12
-# 12 X 1 = 12
-# 12 X 2 = 24
-# 12 X 3 = 36
-# 12 X 4 = 48
-# 12 X 5 = 60
-# 12 X 6 = 72
-# 12 X 7 = 84
-# 12 X 8 = 96
-# 12 X 9 = 108
+# # # 수를 입력하세요. :12
+# # 12 X 1 = 12
+# # 12 X 2 = 24
+# # 12 X 3 = 36
+# # 12 X 4 = 48
+# # 12 X 5 = 60
+# # 12 X 6 = 72
+# # 12 X 7 = 84
+# # 12 X 8 = 96
+# # 12 X 9 = 108
 
-# 문제 3. 3의 배수 합 구하기
-x = 0
-for i in range(3, 101, 3):
-    x += i
-print(x) # 1683
+# # 해설
+# dan = int(input("생성할 단을 입력해주세요"))
+
+# for i in range(1,10):
+#     print(f"{dan}x{i}={dan * i}")
+
+# # 문제 3. 3의 배수 합 구하기
+# x = 0
+# for i in range(3, 101, 3):
+#     x += i
+# print(x) # 1683
+
+# #해설
+# result = 0
+# for i in range(3,101,3):
+#     result += i # 해당 값을 계속 더하는 복합 대입 연산자
+# for i in range(1, 101):
+#     if % == 0: # 나누기 활용 두가지 방법 다 가능
+#         result += i
+#     print("3의 배수의 합 : ", result) 
+
+# # 문제 4. 짝수이면서 5의 배수인 수 출력하기
+# n = int(input("수를 입력하세요. "))
+# for i in range(1, n+1):
+#     if i % 2 == 0 and i % 5 == 0:
+#         print(i) # 10 20 30 40 50
+
+# # 해설
+# n = int(input("수를 입력하세요. : "))
+
+# for i in range(1, n+1):
+#     if i % 2 == 0 and i % 5 == 0
+#         print(i)
 
 
-# 문제 4. 짝수이면서 5의 배수인 수 출력하기
-n = int(input("수를 입력하세요. "))
+print("============================")
+# 루프 제어문
+# 특정 조건 하에서만 작동하도록 구현
+# break : 반복을 즉시 중단한다.
+for i in range(10):
+    if i == 5:
+        break
+    print(i) # 5에서 중단 print()함수 위치에 따라 다름
+print("반복 종료") 
+# 0
+# 1
+# 2
+# 3
+# 4
+# 반복 종료
+
+# continue : 현재 반복을 넘어감
+for i in range(5):
+    if i ==2:
+        print("continue = 건너뜀")
+        continue
+    print(i)
+print("반복 종료")
+
+# pass : 아무 동작도 하지 않고 자리만 차지(추후 구현 예정인 자리)
+# 프로그램에 영향 없음.
+
+for i in range(10):
+    pass
+
+# for -else 구문
+for i in range(5):
+    if i == 2:
+        break
+    print(i)
+else:
+    print("반복 종료") # break로 종료 시 else 구문 실행 x
+
+# 중첩 for 문
+# - 하나의 for 문 안에 다른 for문이 들어있는 구조
+
+
+# 이중 for 문
+for i in range(5):
+    for j in range(5):
+        print("i, j", i, j)
+    print()
+
+# 실습 중첩 for문 연습 문제
+# 문제 1. 구구단 만들기
+
+for i in range(2, 10):
+    print(f'[{i} 단]') # 위치 잘 기억하기!
+    for j in range(1, 10):
+        print(f"{i} X {j} = {i * j}")
+
+# 문제 2. 중첩 for 문 별찍기
+
+n = int(input("몇 줄? :"))
+
+print("왼쪽 정렬")
 for i in range(1, n+1):
-    if i % 2 == 0 and i % 5 == 0:
-        print(i) # 10 20 30 40 50
+    for j in range(i):
+        print("*", end="")
+    print("")
+
+
+print("오른쪽 정렬")
+for i in range(1, n+1):
+    for j in range(n-i):
+        print(" ", end="")
+    for j in range(i):
+        print("*", end="")
+    print("")
+
+
+print("가운데 정렬")
+for i in range(1, n+1):
+    for j in range(n-i):
+        print(" ", end="")
+    for j in range(2 * i-1):
+        print("*", end="")
+    print("")
