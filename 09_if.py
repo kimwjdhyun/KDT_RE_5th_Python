@@ -83,18 +83,18 @@ else:
 
 '''
 # 문제2. 시, 분, 초 구하기
-time = int(input("초를 입력해주세요. :"))
-minute = time // 60
-second = time % 60
-hour = minute // 60
-minute %= 60
+# time = int(input("초를 입력해주세요. :"))
+# minute = time // 60
+# second = time % 60
+# hour = minute // 60
+# minute %= 60
 
-if hour > 0:
-    print(f"{hour}시간 {minute}분 {second}초") # 4321 / 1시간 12분 1초
-elif minute > 0:
-    print(f"{minute}분 {second}초") # 123 / 2분 3초
-else:
-    print(f"{second}초") # 37 / 37초
+# if hour > 0:
+#     print(f"{hour}시간 {minute}분 {second}초") # 4321 / 1시간 12분 1초
+# elif minute > 0:
+#     print(f"{minute}분 {second}초") # 123 / 2분 3초
+# else:
+#     print(f"{second}초") # 37 / 37초
 
 
 # 해설
@@ -148,4 +148,50 @@ else:
 #     if price >= 4000:
 #         print("구매가 완료되었습니다.")
 #     else:
-        # print("잔액이 부족합니다.")
+#         print("잔액이 부족합니다.")
+
+# 해설
+# 실습 5. 편의점 도시락 구매하기
+#1)
+# money = int(input("금액을 넣어주세요. :"))
+# item = input("김밥 / 삼각김밥 / 도시락 중 골라주세요!") # 보기를 제시하는게 좋음, 의도한대로 되지 않을 수 있기 때문에
+
+# KIMBAB = "김밥" # 변수 = 변하는 값, 상수 = 변하지 않는 값(보통 모두 대문자로 작성해서 표기)
+# SAMKIM = "삼각김밥"
+# DOSIRAK = "도시락"
+# k_price, s_price, d_price = 2500, 1500, 4000
+
+# if item == KIMBAB:
+#     if money >= k_price:
+#         print(f"{KIMBAB}을 구매했습니다.")
+#     else:
+#         print("금액이 부족해요.")
+# elif item == SAMKIM:
+#     if money >= s_price:
+#         print(f"{SAMKIM}을 구매했습니다.")
+#     else:
+#         print("금액이 부족해요. ")
+# elif item >= DOSIRAK:
+#     if money >= d_price:
+#         print(f"{DOSIRAK}을 구매했습니다.")
+#     else:
+#         print("금액이 부족해요. ")
+# else: 
+#     print("입력이 잘못됐습니다. ")
+
+# 2) 딕셔너리 사용(간소화)
+# money = int(input("금액을 넣어주세요. :"))
+# item = input("김밥 / 삼각김밥 / 도시락 중 골라주세요!")
+
+# prices = {
+#     "김밥" : 2500, 
+#     "삼각김밥" : 1500, 
+#     "도시락" : 4000
+# }
+# if item in prices:
+#     if money >= prices[item]:
+#         print(f"{item}을 구입했습니다.")
+#     else:
+#         print("금액이 부족해요.")
+# else :
+#     print("입력이 잘못됐습니다. ")
