@@ -35,12 +35,12 @@ while 문
 # 중지!!
 
 # 예제 2. 별도의 반복 변수를 정의
-i =0
+# i =0
 
-while i < 5:
-    print(i, "반복")
-    i += 1
-print("반복 종료")
+# while i < 5:
+#     print(i, "반복")
+#     i += 1
+# print("반복 종료")
 
 # 0 반복
 # 1 반복
@@ -211,17 +211,17 @@ print("반복 종료")
 # 실습 3. while문 연습문제(2)
 # 문제 1. 비밀 코드 맞추기(2)
 
-secret_code = "codingon3"
+# secret_code = "codingon3"
 
-while True :
-    code = input("비밀코드를 입력하세요. :")
+# while True :
+#     code = input("비밀코드를 입력하세요. :")
 
-    if code == "codingon3" :
-        break
-    else:
-        print("비밀코드가 틀렸습니다. 다시 시도하세요.")
+#     if code == "codingon3" :
+#         break
+#     else:
+#         print("비밀코드가 틀렸습니다. 다시 시도하세요.")
 
-print("입장완료! 환영합니다.")
+# print("입장완료! 환영합니다.")
 
 # 비밀코드를 입력하세요. :1
 # 비밀코드가 틀렸습니다. 다시 시도하세요.
@@ -233,25 +233,40 @@ print("입장완료! 환영합니다.")
 # 입장완료! 환영합니다.
 
 
+# 해설
+# 문제 1.
+# secret_code = "codingonre3"
+# user_input = ""
+
+# # 비밀코드와 사용자 입력이 같지 않을때 반복
+# while True:
+#   user_input = input("비밀 코드를 입력하세요:")
+
+#   if user_input == secret_code:
+#     print("입장 완료! 환영합니다.")
+#     break
+#   else:
+#     print("비밀 코드가 틀렸습니다. 다시 시도하세요.")
+
 # 문제 2. 유효한 나이만 평균 내기
 
-times = 0
-sum_age = 0
+# times = 0
+# sum_age = 0
 
-while True:
-    age = int(input("나이를 입력하세요. : "))
+# while True:
+#     age = int(input("나이를 입력하세요. : "))
     
-    if age < 0 or age > 120:
-        continue
+#     if age < 0 or age > 120:
+#         continue
     
-    times += 1
-    sum_age += age  
+#     times += 1
+#     sum_age += age  
     
-    if times == 5:
-        break
+#     if times == 5:
+#         break
 
-average = sum_age // 5  
-print(f"총 나이 합계는 {sum_age}, 평균은 {average}입니다.")
+# average = sum_age // 5  
+# print(f"총 나이 합계는 {sum_age}, 평균은 {average}입니다.")
 
 # 나이를 입력하세요. : 100
 # 나이를 입력하세요. : 150
@@ -261,3 +276,100 @@ print(f"총 나이 합계는 {sum_age}, 평균은 {average}입니다.")
 # 나이를 입력하세요. : 60
 # 나이를 입력하세요. : 80
 # 총 나이 합계는 390, 평균은 78입니다.
+
+# 해설 
+
+# times = 0
+# sum_age = 0
+
+# while times < 5:
+#     age = int(input("나이를 입력하세요: "))
+    
+#     # 나이가 0 이하 또는 120 초과이면 건너 뜀
+#     if age <= 0 or age > 120:
+#         continue
+    
+#     times += 1
+#     sum_age += age
+    
+# print(f"총 나이 합계는 {sum_age}, 평균은 {int(sum_age / times)}")
+
+
+# 중첩 while문
+# 예제
+
+# dan = 2
+# while dan <= 9:
+#     num = 1
+#     print(f"[ {dan} 단 ]")
+
+#     while num <= 9:
+#             print(f"{dan} X {num} = {dan * num}")
+#             num += 1
+#     print()
+#     dan +=1
+
+# dan = 2
+# while dan <= 9:
+#     num = 1
+#     print(f"[ {dan} 단 ]")
+
+#     while num <= 9:
+#            num += 1
+#            if num % 2 != 0:
+#                 continue
+#            else :
+#                 print(f"{dan} X {num} = {dan * num}")
+       
+   
+#     print()
+#     dan += 1
+
+# dan = 2
+# while dan <= 9:
+#     num = 1
+#     print(f"[ {dan} 단 ]")
+
+#     while num <= 9:
+#            num += 1
+#            if num % 2 != 0:
+#                 break
+#            else :
+#                 print(f"{dan} X {num} = {dan * num}")
+       
+   
+#     print()
+#     dan += 1
+
+# 실습 3. 중첩 while문 연습문제
+# 문제 1. 로그인 시스템 구현
+
+# id = "kimwjdhyun"
+# pw = "12345678"
+# user_input_id = input("아이디를 입력하세요. : ")
+
+# while user_input_id != id :
+
+#     print("ID가 존재하지 않습니다.")
+#     user_input_id = input("아이디를 입력하세요. : ")
+
+#     while user_input_id == id :
+#         user_input_pw = input("비밀번호를 입력하세요. : ")
+
+#         while user_input_pw != pw :
+#             print("비밀번호가 틀렸습니다.")
+#             user_input_pw = input("비밀번호를 입력하세요. : ")
+        
+#         print("로그인 성공!")
+#         break
+
+# 아이디를 입력하세요. : sadf
+# ID가 존재하지 않습니다.
+# 아이디를 입력하세요. : kimwjdhyun
+# 비밀번호를 입력하세요. : sdf
+# 비밀번호가 틀렸습니다.
+# 비밀번호를 입력하세요. : 12345678
+# 로그인 성공!
+
+# 추가 문제 . 로그인 시스템 구현
+
