@@ -247,7 +247,7 @@ else:
 
 '''
 
-
+'''
 # 중첩 for 문
 # - 하나의 for 문 안에 다른 for문이 들어있는 구조
 
@@ -426,6 +426,7 @@ for i in range(1, n+1):
 #  *****************
 # *******************
 '''
+'''
 # 별찍기 해설
 n = int(input("몇 줄 ? :"))
 
@@ -456,4 +457,41 @@ for i in range(1, n + 1):
     for j in range(2 * i - 1):
         print("*", end="")
     print()
+
 '''
+# 리스트 컴프리헨션(리스트 내포)
+# - for문을 리스트에 한줄로 축약하여 새 리스트를 생성하는 문법
+# [표현식(리스트의 원소) for 변수 in 반복대상 if 조건]
+# - 표현식 : 값을 유도하는 식(표현)
+
+# for문 이용
+squares = []
+for x in range(1,6):
+    squares.append(x**2)
+print(squares)          # [1, 4, 9, 16, 25]
+
+# 리스트 컴프리헨션
+squares2 = [x**2 for x in range(1,6)]
+print(squares2)         # [1, 4, 9, 16, 25]
+
+# 조건문 추가하기
+squares3 = [x**2 for x in range(1,11) if x % 2==0]
+print(squares3)         # [4, 16, 36, 64, 100]
+
+# 딕셔너리, 집합 컴프리헨션
+squares4 = {x: x**2 for x in range(1,6)}
+print(squares4)         # {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+
+# 실습 1. 리스트 컴프리헨션 연습문제
+# 문제 1. 제곱값 리스트 만들기
+numbers = [n**2 for n in range(1,11)]
+print(numbers)          # [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+# 문제 2. 3의 배수만 리스트로 만들기
+numbers1 = [n for n in range(1,51) if n % 3==0]
+print(numbers1)         # [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48]
+
+# 문제 3. 문자열 리스트에서 길이가 5이상인 단어만 뽑기
+fruits = ["apple", "fig", "banana", "plum", "cherry", "pear", "orange"]
+fruits = [f for f in fruits if len(f)>=5]
+print(fruits)           # ['apple', 'banana', 'cherry', 'orange']
