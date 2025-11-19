@@ -373,3 +373,63 @@ print("반복 종료")
 
 # 추가 문제 . 로그인 시스템 구현
 
+# 로그인 시스템 구현 (중첩 while문 사용)
+
+# 정답 ID와 비밀번호 설정
+correct_id = "codingon"
+correct_pw = "1234"
+
+# 외부 while문 - 로그인 화면
+while True:
+    print("=== 로그인 화면 ===")
+    print("1. 로그인")
+    print("2. 종료")
+    choice = int(input("선택: "))
+    
+    if choice == 1:
+        # 사용자로부터 ID와 비밀번호 입력받기
+        user_id = input("ID : ")
+        user_pw = input("PW : ")
+        
+        # ID와 비밀번호가 모두 맞는지 확인
+        if user_id == correct_id and user_pw == correct_pw:
+            print("로그인 성공! 다시 시도해주세요.")
+            
+            # 내부 while문 - 메뉴 화면 (로그인 성공 후)
+            while True:
+                print("\n===== 메뉴 =====")
+                print("1. 정보 보기")
+                print("2. 설정")
+                print("3. 로그아웃")
+                print("=" * 16)
+                
+                menu_choice = int(input("메뉴 선택: "))
+                
+                if menu_choice == 1:
+                    print("회원 정보입니다.")
+                elif menu_choice == 2:
+                    print("설정 메뉴입니다.")
+                elif menu_choice == 3:
+                    print("로그아웃합니다.")
+                    break  # 내부 while문 종료 (로그아웃)
+                else:
+                    print("잘못된 선택입니다.")
+            
+            # 로그아웃 후 다시 로그인 화면으로
+            print("\n=== 로그인 화면 ===")
+            print("1. 로그인")
+            print("2. 종료")
+            choice_after = int(input("선택: "))
+            
+            if choice_after == 2:
+                print("프로그램을 종료합니다.")
+                break  # 외부 while문 종료 (프로그램 종료)
+                
+        else:
+            print("로그인 실패!")
+            
+    elif choice == 2:
+        print("프로그램을 종료합니다.")
+        break  # 외부 while문 종료 (프로그램 종료)
+    else:
+        print("잘못된 선택입니다.")
