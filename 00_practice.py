@@ -248,3 +248,65 @@ print(data1) # 문자열에서 strip() 사용시 좌우 공백 제거
 # print(a, b, sep = '\n')
 
 # 11 18 슬라이스부터 할것
+
+# 11, 19 추가 문제
+
+'''
+문제 : 로그인 시스템 구현
+
+임의의 id와 비밀번호 세팅
+중첩 while문 사용
+breat, continue 사용할 것
+실행 화면과 같은 모습으로 만들어주세요
+'''
+
+my_id = "kimwjdhyun"
+my_pw = "123321"
+
+while True :
+    print('''
+          "=== 로그인 화면 ===
+          1. 로그인
+          2. 종료"
+          ''')
+    check = int(input("선택 : "))
+
+    if check == 1 :
+        user_id = input(" ID : ")
+        user_pw = input(" PW : ")
+        if user_id == my_id and user_pw == my_pw :
+            print(" 로그인 성공 ! ")
+
+            while True :
+                print('''
+                          "===== 메 뉴 =====
+                          1. 정보 보기
+                          2. 설 정
+                          3. 로그아웃
+                          ================"
+                          ''')
+                    
+                menu_check = int(input(" 메뉴 선택 : "))
+
+                if menu_check == 1 :
+                        print("회원 정보입니다.")
+                elif menu_check == 2 :
+                        print("설정 메뉴입니다.")
+                elif menu_check == 3 :
+                     print("로그아웃합니다.")
+                     break
+                else :
+                     print("잘못된 선택입니다.")
+                     continue
+                
+            if check == 2 :
+                print("종료합니다.")
+                break
+        
+        else :
+             print("로그인 실패!")
+    elif check == 2:
+         print("종료합니다.")
+         break
+    else : 
+         print("잘못된 선택입니다.")
