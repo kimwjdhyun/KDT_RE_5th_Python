@@ -260,53 +260,112 @@ breat, continue 사용할 것
 실행 화면과 같은 모습으로 만들어주세요
 '''
 
-my_id = "kimwjdhyun"
-my_pw = "123321"
 
-while True :
-    print('''
-          "=== 로그인 화면 ===
-          1. 로그인
-          2. 종료"
-          ''')
-    check = int(input("선택 : "))
+# my_id = "kimwjdhyun"
+# my_pw = "123321"
 
-    if check == 1 :
-        user_id = input(" ID : ")
-        user_pw = input(" PW : ")
-        if user_id == my_id and user_pw == my_pw :
-            print(" 로그인 성공 ! ")
+# while True :
+    # print('''
+    #       "=== 로그인 화면 ===
+    #       1. 로그인
+    #       2. 종료"
+    #       ''')
+    # check = int(input("선택 : "))
 
-            while True :
-                print('''
-                          "===== 메 뉴 =====
-                          1. 정보 보기
-                          2. 설 정
-                          3. 로그아웃
-                          ================"
-                          ''')
+    # if check == 1 :
+    #     user_id = input(" ID : ")
+    #     user_pw = input(" PW : ")
+    #     if user_id == my_id and user_pw == my_pw :
+    #         print(" 로그인 성공 ! ")
+
+    #         while True :
+    #             print('''
+    #                       "===== 메 뉴 =====
+    #                       1. 정보 보기
+    #                       2. 설 정
+    #                       3. 로그아웃
+    #                       ================"
+    #                       ''')
                     
-                menu_check = int(input(" 메뉴 선택 : "))
+    #             menu_check = int(input(" 메뉴 선택 : "))
 
-                if menu_check == 1 :
-                        print("회원 정보입니다.")
-                elif menu_check == 2 :
-                        print("설정 메뉴입니다.")
-                elif menu_check == 3 :
-                     print("로그아웃합니다.")
-                     break
-                else :
-                     print("잘못된 선택입니다.")
-                     continue
+    #             if menu_check == 1 :
+    #                     print("회원 정보입니다.")
+    #             elif menu_check == 2 :
+    #                     print("설정 메뉴입니다.")
+    #             elif menu_check == 3 :
+    #                  print("로그아웃합니다.")
+    #                  break
+    #             else :
+    #                  print("잘못된 선택입니다.")
+    #                  continue
                 
-            if check == 2 :
-                print("종료합니다.")
-                break
+    #         if check == 2 :
+    #             print("종료합니다.")
+    #             break
         
-        else :
-             print("로그인 실패!")
-    elif check == 2:
-         print("종료합니다.")
-         break
-    else : 
-         print("잘못된 선택입니다.")
+    #     else :
+    #          print("로그인 실패!")
+    # elif check == 2:
+    #      print("종료합니다.")
+    #      break
+    # else : 
+    #      print("잘못된 선택입니다.")
+
+
+# 11-19 코딩도장 복습
+# x = 0
+ 
+# if x == 4:
+#     print('A')
+# elif x == 3:
+#     print('B')
+# elif x == 2:
+#     print('C')
+# elif x == 1:
+#     print('D')
+# else:
+#     print('E')
+
+
+# 표준 입력으로 나이(만 나이)가 입력됩니다(입력 값은 7 이상 입력됨).
+#  교통카드 시스템에서 시내버스 요금은 다음과 같으며 각 나이에 맞게 요금을 차감한 뒤 
+# 잔액이 출력되게 만드세요(if, elif 사용). 현재 교통카드에는 9,000원이 들어있습니다.
+
+# 어린이(초등학생, 만 7세 이상 12세 이하): 650원
+# 청소년(중∙고등학생, 만 13세 이상 18세 이하): 1,050원
+# 어른(일반, 만 19세 이상): 1,250원
+
+# age = int(input())
+# balance = 9000
+
+# if age >= 19 :
+#     balance -= 1250
+# elif age >= 13 :
+#     balance -= 1050
+# elif age >= 7 :
+#     balance -= 650
+
+# print(balance)
+
+
+# for i in range(1, 10):
+#     for j in range(1, 10):
+#         print(f"{i} x {j} = {i * j}")
+
+# i = 2
+# j = 5
+
+# while i <= 32 or j>= 1 :
+#     print(i, j)
+#     i *= 2
+#     j -= 1
+
+# amount = int(input())
+
+
+# while amount>= 1350 :
+#     amount -= 1350
+#     print(amount)
+
+# 루프제어문 부터 시작!!
