@@ -167,3 +167,8 @@ def discount_prices(**kwargs):
         disconted = value * 0.9
         print(f"{key} : 할인가 {disconted} 원가 {value}")
 discount_prices(apple = 2000, watermelon = 20000, chocolate = 2500)
+
+# apple : 할인가 1800.0 원가 2000
+# watermelon : 할인가 18000.0 원가 20000
+# chocolate : 할인가 2250.0 원가 2500
+
