@@ -5,66 +5,66 @@
 - 특정한 코드들을 재사용할 수 있게 한다.
 '''
 
-# # 사용자 정의 함수 기본 문법
-# # 함수의 정의 : define의 약자로 def 사용
-# def 함수이름 (매개변수):
-#     # 실행할 코드
-#     print(매개변수)
-#     return"반환값"
+# 사용자 정의 함수 기본 문법
+# 함수의 정의 : define의 약자로 def 사용
+def 함수이름 (매개변수):
+    # 실행할 코드
+    print(매개변수)
+    return"반환값"
 
-# # 함수의 실행(호출 call)
-# result = 함수이름("인자")
-# print(result)
+# 함수의 실행(호출 call)
+result = 함수이름("인자")
+print(result)
 
-# # 매개 변수(Parameter) : 매개 + 변수
-# # 매개 : 둘 사이를 연결해줌
-# # 함수가 실행될 때 인자로부터 입력되는값을 함수의 코드블록으로 전달하는 역할
+# 매개 변수(Parameter) : 매개 + 변수
+# 매개 : 둘 사이를 연결해줌
+# 함수가 실행될 때 인자로부터 입력되는값을 함수의 코드블록으로 전달하는 역할
 
-# # 함수의 필요성 예제
-# a = 10
-# b = 20
+# 함수의 필요성 예제
+a = 10
+b = 20
 
-# if a > b :
-#     print(a - b)
-# else :
-#     print(a + b)
+if a > b :
+    print(a - b)
+else :
+    print(a + b)
 
-# c = 30
-# d = 40
+c = 30
+d = 40
 
-# if c > d :
-#     print(c - d)
-# else :
-#     print(c + d)
+if c > d :
+    print(c - d)
+else :
+    print(c + d)
 
-# def my_func(a, b) :
-#     if a > b :
-#         return a - b
-#     else : 
-#         return a + b
-# print(my_func(10, 20))
-# print(my_func(30, 40))
+def my_func(a, b) :
+    if a > b :
+        return a - b
+    else : 
+        return a + b
+print(my_func(10, 20))
+print(my_func(30, 40))
 
-# 실습 1. 사칙연산 계산기 함수 만들기
-# 문제 1. 사친견산 계산기 함수 만들기
-# a = float(input())
-# b = float(input())
-# operator = input()
+실습 1. 사칙연산 계산기 함수 만들기
+문제 1. 사친견산 계산기 함수 만들기
+a = float(input())
+b = float(input())
+operator = input()
 
-# def calculate(a, b, operator) :
-#     if operator == "+" :
-#         return a + b
-#     elif operator == "-" :
-#         return a - b
-#     elif operator == "*" :
-#         return a * b
-#     elif operator == "/" :
-#         return a / b
-#     else : 
-#         return "지원하지 않는 연산입니다"
+def calculate(a, b, operator) :
+    if operator == "+" :
+        return a + b
+    elif operator == "-" :
+        return a - b
+    elif operator == "*" :
+        return a * b
+    elif operator == "/" :
+        return a / b
+    else : 
+        return "지원하지 않는 연산입니다"
 
-# result = calculate(a, b, operator)
-# print(result)
+result = calculate(a, b, operator)
+print(result)
 
 # 키워드 인자
 # 예시 1. 

@@ -368,7 +368,6 @@ breat, continue 사용할 것
 #     amount -= 1350
 #     print(amount)
 
-# 루프제어문 부터 시작!!
 '''
 user_id = "codingon"
 user_pw = "abc123"
@@ -432,4 +431,115 @@ while True:
         continue
     print(i, end=' ')
     i += 1
+
+# 21 33
+# 21 22 24 25 26 27 28 29 30 31 32    
 '''
+
+
+# 함수
+
+def print_coin() :
+    print("비트코인")
+print_coin()
+
+for i in range(100) :
+    print_coin()
+
+def print_coin() :
+    for i in range(100) :
+        print("비트코인")
+print_coin()
+
+# hello()
+# def hello():
+#     print("Hi")
+# 함수를 정의하기 전에 호출을 함
+
+def message() :
+    print("A")
+    print("B")
+
+message()
+print("C")
+message()
+
+# A
+# B
+# C
+# A
+# B
+
+def print_with_smile(string) :
+    print(string, ":D")
+
+print_with_smile("안녕하세요")
+
+def print_uppwe_price(price) :
+    print(price * 1.3)
+
+def print_sum(a, b) :
+    print( a + b )
+
+def print_arithmetic_operation(a, b) :
+    print(a, "+", b, "=", a + b)
+    print(a, "-", b, "=", a - b)
+    print(a, "*", b, "=", a * b)
+    print(a, "/", b, "=", a / b)
+print_arithmetic_operation(3, 4)
+# 3 + 4 = 7
+# 3 - 4 = -1
+# 3 * 4 = 12
+# 3 / 4 = 0.75
+
+def print_max(x, y, z) :
+    if x >= y and x >= z :
+        print(x)
+    elif y >= x and y >= z :
+        print(y)
+    elif z >= x and z >= y :
+        print(z)
+
+print_max(10, 5, 8)   # 10
+print_max(3, 15, 7)   # 15
+print_max(6, 2, 20)   # 20
+
+def print_reverse(string) :
+    print(string[::-1])
+print_reverse("python") # nohtyp
+
+def print_score(score) :
+    print(sum(score) / len(score))
+print_score([1, 2, 3]) # 2.0
+
+def print_even(even_list) :
+    for i in even_list :
+        if i % 2 == 0:
+            print(i)
+print_even([1, 3, 2, 10, 12, 11, 15])
+# 2
+# 10
+# 12
+
+def print_key(dic) :
+    for key in dic :
+        print(key)
+print_key ({"이름":"김말똥", "나이":30, "성별":0})
+
+# 이름
+# 나이
+# 성별
+
+My_dict = {"10/26" : [100, 130, 100, 100],
+           "10/27" : [10, 12, 10, 11]}
+
+def print_value_by_key (My_dict, key) :
+    print(My_dict[key])
+
+print_value_by_key(My_dict, "10/26") # [100, 130, 100, 100]
+
+def print_5xn(string) :
+    num = int(len(string) / 5)
+    for i in range(num + 1) :
+        print(string[i*5 : 5+5])
+print_5xn("아이엠어보이유알어걸") # 아이엠어보이유알어걸
