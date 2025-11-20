@@ -172,3 +172,98 @@ discount_prices(apple = 2000, watermelon = 20000, chocolate = 2500)
 # watermelon : 할인가 18000.0 원가 20000
 # chocolate : 할인가 2250.0 원가 2500
 
+# 전역 변수 : 함수 밖에 선언된 변수
+# 지역 변수 : 함수 안에 선언된 변수
+
+# 예제 1
+x = 200 # 전역 변수
+
+def my_func() :
+    #지역변수
+    x = 10
+    print(x) # 안나옴
+
+my_func() # 함수 안 10
+print("함수 밖", x) # 함수 밖 200
+
+# 예제 2 
+x = 10
+
+def my_func2() :
+    x = 20 
+    x += 5
+    print("지역변수", x)
+
+my_func2() # 지역변수 25
+print("전역 변수", x) # 전역 변수 10
+
+x = 10
+
+# 예제 3 (에러 발생)
+x = 20
+
+def my_func2() :
+    # x = 20 # UnboundLocalError : 전역변수를 함수안에서 수정할 경우 에러 발생
+    x += 5
+    print("지역변수", x)
+
+my_func2() # 지역변수 25
+print("전역 변수", x)
+
+# 예제 4. global 사용 예제
+x = 10
+
+def my_func3() :
+    global x # 전역변수 사용 선언
+    x += 5
+    print("지역변수", x)
+
+my_func3()  # 지역변수 15
+
+print("전역변수", x) # 전역변수 15(global 사용으로 전역 변수도 변하게 됨.)
+
+# 권장되는 패턴
+# 부수 효과(side effect)를 발생시키지 않는 함수를 위주로 프로그래밍
+x = 10
+
+def my_func4(x) : # 함수안에서 새로 지역변수를 만들어서 실행하는 방법
+    x += 5
+    return x
+
+x = my_func4(x)
+print("전역변수", x) # 전역변수 15
+
+# 실습 3. 전역 변수 연습하기
+# 문제 : 로그인 / 로그아웃 전역 상택 관리
+
+current_user = ""
+
+def login(name):
+    global current_user
+    if current_user:
+        print("이미 로그인되어 있습니다")
+    else:
+        current_user = name
+        print(f"{name}님 로그인 성공")
+
+def logout():
+    global current_user
+    if not current_user:
+        print("로그인된 사용자가 없습니다")
+    else:
+        current_user = ""
+        print("로그아웃되었습니다")
+
+login("kimwjdhyun")
+login("codingon")
+logout()
+logout()
+login("codingon")
+print(current_user)
+
+# kimwjdhyun님 로그인 성공
+# 이미 로그인되어 있습니다
+# 로그아웃되었습니다
+# 로그인된 사용자가 없습니다
+# codingon님 로그인 성공
+# codingon
