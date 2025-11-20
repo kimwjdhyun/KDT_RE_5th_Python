@@ -407,7 +407,7 @@ while True :
                           1. 정보 보기
                           2. 설 정
                           3. 로그아웃
-                          ================"
+                          =================="
                           ''')
                     
                 menu_check = int(input(" 메뉴 선택 : "))
@@ -417,8 +417,8 @@ while True :
                 elif menu_check == 2 :
                         print("설정 메뉴입니다.")
                 elif menu_check == 3 :
-                     print("로그아웃합니다.")
-                     break
+                        print("로그아웃합니다.")
+                        break
                 else :
                      print("잘못된 선택입니다.")
                      continue
