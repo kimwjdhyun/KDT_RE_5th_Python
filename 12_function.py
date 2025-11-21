@@ -305,3 +305,72 @@ login("lee")
 logout()
 '''
 
+# 재귀 함수
+# 1. 자기 자신을 호출하는 함수
+# 2. 반드시 기본 조건(종료 조건)이 있어야 함.
+# - 큰 문제를 작은 문제로 나누었을 때 일정한 패턴이 있어야 함
+
+# import time
+
+# def recutsive_func(n) :
+#     # 기본 조건(종료 조건)
+#     if n == 0 :
+#         return
+    
+#     recutsive_func(n-1)
+#     print("재귀 호출", n)
+#     time.sleep(1)
+
+# recutsive_func(5)
+
+
+# 실습 4. 거듭제곱
+
+# a ** b == a * (a ** (b - 1))
+
+# def opper(a, b) :
+#     if b == 0 :
+#         return 1
+#     else :
+#         return a * (a, (b-1))
+    
+# print(opper (5, 6))
+
+#해설
+# def power_rec(a, b) :
+#     if b == 0 :
+#         return 1
+#     return a * power_rec(a, b - 1)
+#     # a * a * a * a * .... * 1 (=> b = 0)
+
+# print("재귀함수", power_rec(2, 3)) # 재귀함수 8
+# 2 * 2 * 2 * 1 => b = 3, b = 0이 되는 순간까지  포함 총 4개
+ 
+# 실습 5. 팩토리얼
+# def factorial(n) :
+# n = int(input())
+# result = 1
+# for i in range(1, n + 1) :
+#     result *= i
+# print(result)
+
+# def factorial(n) :
+#     result = 1
+#     for i in range(1, n+1) :
+#         result *= i
+#     return result
+
+# print("팩토리얼", factorial(5))
+
+# 실습 6. 피보나치 수열
+
+def fibo(n) :
+    if n <= 0 :
+        return 0
+    a, b = 1, 1
+
+    for n in range(1, n - 1) :
+        a, b = b, a + b
+    
+    return b
+
