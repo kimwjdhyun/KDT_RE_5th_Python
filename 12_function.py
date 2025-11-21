@@ -326,7 +326,6 @@ logout()
 
 # 실습 4. 거듭제곱
 
-# a ** b == a * (a ** (b - 1))
 
 # def opper(a, b) :
 #     if b == 0 :
@@ -347,30 +346,168 @@ logout()
 # 2 * 2 * 2 * 1 => b = 3, b = 0이 되는 순간까지  포함 총 4개
  
 # 실습 5. 팩토리얼
-# def factorial(n) :
-# n = int(input())
-# result = 1
-# for i in range(1, n + 1) :
-#     result *= i
-# print(result)
+def factorial(n) : 
+    for i in range(1, n + 1) :
+        result *= i
+    print(result)
 
-# def factorial(n) :
-#     result = 1
-#     for i in range(1, n+1) :
-#         result *= i
-#     return result
+def factorial(n) :
+    result = 1
+    for i in range(1, n+1) :
+        result *= i
+    return result
 
-# print("팩토리얼", factorial(5))
+print("팩토리얼", factorial(5)) # 120
+
+# 해설
+def factorial_rec(n) :
+    # 예외처리
+    if n < 0 :
+        return "음수의 팩토리얼은 정의되지 않습니다."
+
+    # 기본조건
+    if n == 0 or n == 1 :
+     return 1
+    
+    return n * factorial_rec(n -1)
+
 
 # 실습 6. 피보나치 수열
-
+# 반복문
 def fibo(n) :
     if n <= 0 :
         return 0
-    a, b = 1, 1
-
-    for n in range(1, n - 1) :
-        a, b = b, a + b
     
-    return b
+    x, y = 1, 1
+    for n in range(1, n - 1) :
+        x, y = y, x + y
+    
+    return y # 값
 
+print(fibo(18)) # 2584
+
+#  재귀함수
+def fibo2(n) :
+    if n <= 0 :
+        return 0
+    elif n == 1:
+        return 1
+    return fibo2(n-1) + fibo2(n-2)
+
+
+print(fibo2(1)) # 1
+print(fibo2(2)) # 1
+print(fibo2(3)) # 2
+print(fibo2(4)) # 3
+print(fibo2(5)) # 5
+print(fibo2(6)) # 8
+print(fibo2(7)) # 13
+print(fibo2(8)) # 21
+print(fibo2(9)) # 34
+print(fibo2(10)) # 55
+
+
+# 실습 6. 피보나치 수열
+# 반복문
+
+
+# def fibonacci_for(n):
+#     if n <= 0:
+#         return 0
+#     elif n == 1:
+#         return 1
+
+#     a, b = 0, 1
+#     for _ in range(n-1):
+#         a, b = b, a+b
+#         # 0 1 <= 1 1
+#         # 1 1 <= 1 2
+#         # 1 2 <= 2 3
+
+#     return b
+
+
+# print(fibonacci_for(6))
+
+# # 재귀함수
+
+
+# def fibonacci_rec(n):
+#     if n <= 0:
+#         return 0
+#     elif n == 1:
+#         return 1
+
+#     return fibonacci_rec(n-1) + fibonacci_rec(n-2)
+
+
+# print(fibonacci_rec(6))
+
+# 람다 함수
+# 람다(lamda) 함수
+
+# 람다 함수의 기본 문법
+# lamda 매개변수 : 표현식
+# - 표현식 : 값이 반환되는 식
+
+# # 일반함수
+# def add(x, y) :
+# 	return x + y
+# # 람다 함수
+# lamda x, y : x + y # 함수를 변수에 넣으면 재활용도 가능함
+# add_func =(lamda x, y : x + y)
+# print(add_func(3, 5)) # 8
+
+# #람다로 값을 반환하고 사용을 끝내는 경우
+# (lamda x : x ** 2)(10)
+
+# 람다 함수의 활용
+# 1. map에서 활용
+my_list = [1, 2, 3, 4]
+
+#일반 함수를 사용
+def square_func(x) :
+    return x ** 2
+
+#함수를 인자로 받는 함수
+print(list(map(square_func, my_list)))  # [1, 4, 9, 16]
+
+# 람다 함수를 사용
+print(list(map(lambda x : x ** 2, my_list))) # [1, 4, 9, 16]
+
+#2. filter 에서 활용
+my_list2 = [1, 2, 3, 4, 5, 6 ,7 ,8, 9, 10]
+
+# 일반 함수 사용
+def is_even(x) :
+    return x % 2 == 0
+
+print(list(filter(is_even, my_list2))) # [2, 4, 6, 8, 10]
+
+# 람다 함수 사용
+print(list(filter(lambda x : x % 2 == 0, my_list2))) # [2, 4, 6, 8, 10]
+
+# 3. sorted 에서 활용
+my_list3 = ["apple", "banana", "watermelon", "grape"]
+print(sorted(my_list3, key = lambda word : len(word))) # ['apple', 'grape', 'banana', 'watermelon']
+
+# 실습 4. 람다함수 연습 문제
+# 문제 1. 특정 조건 만족하는 튜플만 추출
+
+students = [("Alice", [80, 90]), ("Bob", [60, 65]), ("Charlie", [70, 70])]
+
+average = tuple(filter(lambda x : x[1]>= 70, map(lambda student : (student[0], sum(student[1]) / len(student[1])), students)))
+print(average) # (('Alice', 85.0), ('Charlie', 70.0))
+
+# 문제 2. 키워드 추출 리스트 만들기
+
+sentences = ["Python is fun", "Lambda functions are powerful", "Coding is creative"]
+
+word_1st = list(map(lambda sentence : sentence.split()[0], sentences))
+
+print(word_1st) # ['Python', 'Lambda', 'Coding']
+
+#문제 3. 튜플 리스트를 정리하기
+
+people = [("Alice", 30), ("Bob", 25), ("Charlie", 35)]
+print(sorted(people, key= lambda age : age[1])) # [('Bob', 25), ('Alice', 30), ('Charlie', 35)] 
