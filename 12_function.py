@@ -498,6 +498,8 @@ students = [("Alice", [80, 90]), ("Bob", [60, 65]), ("Charlie", [70, 70])]
 
 average = tuple(filter(lambda x : x[1]>= 70, map(lambda student : (student[0], sum(student[1]) / len(student[1])), students)))
 print(average) # (('Alice', 85.0), ('Charlie', 70.0))
+# 해설
+print(list(filter(lambda s : sum(s[1]) / len(s[1]) >= 70, students))) # [('Alice', [80, 90]), ('Charlie', [70, 70])]
 
 # 문제 2. 키워드 추출 리스트 만들기
 
@@ -507,7 +509,15 @@ word_1st = list(map(lambda sentence : sentence.split()[0], sentences))
 
 print(word_1st) # ['Python', 'Lambda', 'Coding']
 
+# 해설 
+print(list(map(lambda s : s.split()[0], sentences))) # ['Python', 'Lambda', 'Coding']
+
 #문제 3. 튜플 리스트를 정리하기
 
 people = [("Alice", 30), ("Bob", 25), ("Charlie", 35)]
 print(sorted(people, key= lambda age : age[1])) # [('Bob', 25), ('Alice', 30), ('Charlie', 35)] 
+
+# 해설
+result = sorted(people, key = lambda person : person[1])
+print(result) # [('Bob', 25), ('Alice', 30), ('Charlie', 35)]
+
