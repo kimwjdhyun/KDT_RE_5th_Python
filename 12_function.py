@@ -4,7 +4,7 @@
 - 복잡한 코드를 작은 단위로 나눌 수 있게 모아준다.
 - 특정한 코드들을 재사용할 수 있게 한다.
 '''
-
+'''
 # 사용자 정의 함수 기본 문법
 # 함수의 정의 : define의 약자로 def 사용
 def 함수이름 (매개변수):
@@ -45,8 +45,8 @@ def my_func(a, b) :
 print(my_func(10, 20))
 print(my_func(30, 40))
 
-실습 1. 사칙연산 계산기 함수 만들기
-문제 1. 사친견산 계산기 함수 만들기
+# 실습 1. 사칙연산 계산기 함수 만들기
+# 문제 1. 사친견산 계산기 함수 만들기
 a = float(input())
 b = float(input())
 operator = input()
@@ -233,6 +233,7 @@ def my_func4(x) : # 함수안에서 새로 지역변수를 만들어서 실행�
 x = my_func4(x)
 print("전역변수", x) # 전역변수 15
 
+
 # 실습 3. 전역 변수 연습하기
 # 문제 : 로그인 / 로그아웃 전역 상택 관리
 
@@ -267,3 +268,40 @@ print(current_user)
 # 로그인된 사용자가 없습니다
 # codingon님 로그인 성공
 # codingon
+'''
+'''
+# 리더님 해설
+
+current_user = None
+login_count = 0
+
+def login(name) :
+    global current_user
+    global login_count
+
+    if current_user == None :
+        current_user == name
+        print(f"{name}님 로그인 성공~!")
+    else :
+        print("이미 로그인되어 있습니다.")
+        login_count += 1
+        if login_count > 4 :
+            print("더이상 로그인 시도를 할 수 없습니다.")
+
+def logout() :
+    global current_user
+    global login_count
+
+    if current_user == None :
+        print("로그인 상태가 아닙니다.")
+    else :
+        print("로그아웃 되었습니다.")
+        current_user = None
+        login_count = 0
+
+logout()
+login("kim")
+login("lee")
+logout()
+'''
+
