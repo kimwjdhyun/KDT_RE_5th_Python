@@ -157,7 +157,7 @@ class User:
     
     @classmethod
     def get_total_users(cls):  
-        print(f"총 {cls.total_users}명의 유저가 있습니다.")
+        print(f"총 {cls.total_users}명의 유저가 있습니다.") # 총 4명의 유저가 있습니다
 
 user1 = User("wjdhyun", 300)
 user2 = User("kimjeonghyun", 40)
@@ -165,10 +165,10 @@ user3 = User("kimwjdhyun", 500)
 user4 = User("unrank", -45)
 
 User.get_total_users()
-print(f"{user1.username}님의 등급: {user1.get_rank()}")
-print(f"{user2.username}님의 등급: {user2.get_rank()}")
-print(f"{user3.username}님의 등급: {user3.get_rank()}")
-print(f"{user4.username}님의 등급: {user4.get_rank()}")
+print(f"{user1.username}님의 등급: {user1.get_rank()}") # wjdhyun님의 등급: Silver
+print(f"{user2.username}님의 등급: {user2.get_rank()}") # kimjeonghyun님의 등급: Bronze
+print(f"{user3.username}님의 등급: {user3.get_rank()}") # kimwjdhyun님의 등급: Gold
+print(f"{user4.username}님의 등급: {user4.get_rank()}") # unrank님의 등급: 등급이 존재하지 않습니다.
 
 # 접근 제어와 정보 은닉
 # 데이터 무결성을 보호하기 위함
@@ -178,7 +178,7 @@ class person2:
     def __init__(self, name, age):
         # public
         self.name = name
-        # private : 언더바(__) 두개를 변수 앞에 붙여서 저으이
+        # private : 언더바(__) 두개를 변수 앞에 붙여서 정의
         self.__age = age
     
     # getter
