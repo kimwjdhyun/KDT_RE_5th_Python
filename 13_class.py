@@ -59,7 +59,7 @@ my_instance.progress()
 
 
 # 문제 2. Rectangle 클래스 구현
-
+'''
 class Rectangle:
     def __init__(self, width, height):
         self.width = width
@@ -68,8 +68,133 @@ class Rectangle:
     def area(self):
         return self.width * self.height
     
-wid = int(input("가로 : "))
-hei = int(input("세로 : "))
+wid = int(input("가로 : ")) # 12
+hei = int(input("세로 : ")) # 12
 Rectangle = Rectangle(wid, hei)
-print("넓이는", Rectangle.area())
+print("넓이는", Rectangle.area()) # 넓이는 144
+
+'''
+
+# 클래스 변수
+# - 클래스가 가지고 있는 변수
+# 모든 인스스턴스가 공유할 수 있음
+class Dog:
+    # 클래스 변수
+    kind = "강아지"
+
+    def __init__(self, species, name, age):
+        self.species = species
+        self.name = name
+        self.age = age
+
+dog1 = Dog("포메라니안", "리치", 12)
+dog2 = Dog("비숑", "구름", 10)
+
+print("인스턴스1", dog1.kind) # 인스턴스1 강아지
+print("인스턴스2", dog2.kind) # 인스턴스2 강아지
+print("클래스", Dog.kind)     # 클래스 강아지
+
+# 클래스 메서드
+# 클래스 자체를 대상으로 동작하는 메서드
+# 클래스 데이터를 조작하는데 사용
+
+class Book2:
+    book_count = 0
+
+    def __init__(self, title, author):
+        Book2.book_count += 1
+        self.title = title
+        self.author = author
+
+    # 클래스 메서드
+    @classmethod # 데코레이터
+    def get_count(cls):
+        print(f"현재 {cls.book_count}권의 책을 가지고 있다.")
+
+book1 = Book2("B1", "author1")
+book2 = Book2("B2", "authot2")
+
+print(Book2.book_count) # 현재 2권의 책을 가지고 있다.
+Book2.get_count()
+
+# 정적 메서드
+# - 클래스나 인스턴스의 데이터를 조작하지 않는 클래스 함수
+# - 클래스나 인스턴스의 상태에 의존하지 않는 일반 함수
+# - 개념적으로는 클래스와 연관이 있으나, 클래스나 인스턴스의 데이터를 조작하지 않음
+
+
+class OperationTool:
+
+    @staticmethod # 데코레이터
+    def add(a, b):
+        return a +b
+    
+print(OperationTool.add(10, 20)) # 30
+
+# 실습 2. 클래스 변수, 메서드 연습
+# 문제 1. User 클래스 구현
+
+class User:
+    total_users = 0
+    
+    def __init__(self, username, points):
+        self.username = username
+        self.points = points
+        User.total_users += 1
+    
+    def add_points(self, amount):
+        self.points += amount
+    
+    def get_rank(self):
+        if 0 <= self.points < 100:
+            return "Bronze"
+        elif 100 <= self.points < 500:
+            return "Silver"
+        elif 500 <= self.points:
+            return "Gold"
+        else:
+            return "등급이 존재하지 않습니다."
+    
+    @classmethod
+    def get_total_users(cls):  
+        print(f"총 {cls.total_users}명의 유저가 있습니다.")
+
+user1 = User("wjdhyun", 300)
+user2 = User("kimjeonghyun", 40)
+user3 = User("kimwjdhyun", 500)
+user4 = User("unrank", -45)
+
+User.get_total_users()
+print(f"{user1.username}님의 등급: {user1.get_rank()}")
+print(f"{user2.username}님의 등급: {user2.get_rank()}")
+print(f"{user3.username}님의 등급: {user3.get_rank()}")
+print(f"{user4.username}님의 등급: {user4.get_rank()}")
+
+# 접근 제어와 정보 은닉
+# 데이터 무결성을 보호하기 위함
+# 코드 안정성을 향상시키기 위함
+
+class person2:
+    def __init__(self, name, age):
+        # public
+        self.name = name
+        # private : 언더바(__) 두개를 변수 앞에 붙여서 저으이
+        self.__age = age
+    
+    # getter
+    def get_age(self):
+        return self.__age
+    
+    # setter
+    def set_age(self, value):
+        if value > 120 or value < 0:
+            print("유효하지 않은 나이입니다.")
+        else:
+            self.__age = value
+
+p1 = person2("kimwjdgyun", 28)
+print(p1.name)
+# print(p1.__age) # AttributeError
+print(p1.get_age()) # 28
+p1.set_age(-10) # 유효하지 않은 나이입니다.
 
