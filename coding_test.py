@@ -9,3 +9,63 @@ def solution(a, b):
     
 print(solution(2, 91)) # 364
 print(solution(91, 2)) # 912
+
+
+common = (1, 2, 3, 4)
+
+# def solution(common):
+#     length = len(common)
+#     first = common[1] - common[0]
+#     second = common[2] - common[1]
+#     third = common[1] // common[0]
+#     if first != second or first == 0:
+#         answer = common[length-1] * third
+#     else:
+#         answer = common[length-1] + first
+#     return answer
+
+# 모범답안
+
+# def solution(common):
+#     answer = 0
+#     a,b,c = common[:3]
+#     if (b-a) == (c-b):
+#         return common[-1]+(b-a)
+#     else:
+#         return common[-1] * (b//a)
+#     return answer
+
+def solution(num1, num2):
+    -50000<=num1<=50000
+    -50000<=num2<=50000
+    return num1 + num2
+    
+def solution(num1, num2):
+    answer = num1 / num2
+    return answer*1000
+
+def solution(num1, num2):
+    if num1 == num2:
+        return 1
+    elif num1!=num2:
+        return -1
+
+def solution(numer1, denom1, numer2, denom2):
+    numer=numer1 * denom2 + numer2*denom1
+    denom=denom1* denom2
+
+
+    i=[]
+    for num in range(1, min(numer,denom)+1):
+        if numer%num==0 and denom%num==0:
+            i.append(num)
+            print(i)
+    gn=max(i)
+    print ("최대공약수:", gn)
+
+    answer=[numer/gn,denom/gn]
+    return answer
+
+def solution(numbers):
+    answer = [i*2 for i in numbers]
+    return answer
