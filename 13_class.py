@@ -198,3 +198,88 @@ print(p1.name)
 print(p1.get_age()) # 28
 p1.set_age(-10) # 유효하지 않은 나이입니다.
 
+# @property 데코레이터
+# - 메서드를 속성처럼 보이게 만들어주는 데코레이터
+
+class EX:
+    def __init__(self):
+        self.__value = 0
+
+    # getter
+    @property # ()생략 속성으로 사용하기 때문
+    def value(self):
+        return self.__value
+    
+    # setter
+    @value.setter
+    def value(self, val):
+        if val < 0:
+            print("유효하지 않은 값입니다.")
+        else:
+            self.__value = val
+        
+ex1 = EX()
+print(ex1.value) # 0
+ex1.value = 100
+print(ex1.value) # 100 : @property로 속성 처럼 사용
+ex1.value = -100
+print(ex1.value) # 유효하지 않은 값입니다., 100
+
+# 실습 3. 접근 제어와 정보은닉 연습
+# 문제 1. UserAccount 클래스 : 비밀번호 보호
+class UserAccount:
+    def __init__(self, username, password):
+        self.username = username
+        self.__password = password   
+    
+    
+    def changed_password(self, old_pw, new_pw):
+        if self.__password != old_pw:
+            return "비밀번호가 틀렸습니다."
+        elif self.__password == old_pw:
+            print("이전 비밀번호입니다. 변경하시겠습니까?")
+            return new_pw
+
+
+    
+    def check_password(self, __password):
+        if __password == 123321:
+            print("로그인 성공!")
+            return True
+        else:
+            print("비밀번호가 틀렸습니다.")
+            return False
+
+user = UserAccount("kimwjdhyun", 123321)
+
+user.check_password(123321) # 로그인 성공!
+user.check_password(12321) # 비밀번호가 틀렸습니다.
+user.changed_password(123321, 0) # 이전 비밀번호입니다. 변경하시겠습니까?
+
+# 문제 2. Student 클래스 : 성적 검증(@property 사용)
+class Student:
+    def __init__(self, name, score):
+        self.name = name
+        self.__score = score
+    
+    @property
+    def score(self):
+        if 0 <= self.__score <= 100:
+            return self.__score
+        else:
+            return 0  
+    
+    @score.setter
+    def score(self, sco):
+        if sco < 0 or sco > 100:
+            print("잘못 입력했습니다.")
+        else:
+            self.__score = sco
+
+student1 = Student("kimwjdhyun", 80)
+print(f"이름 : {student1.name}")        # 이름 : kimwjdhyun
+print(f"점수 : {student1.score}")       # 점수 : 80
+student1.score = 95
+print(f"점수: {student1.score}")        # 점수 : 95
+student1.score = -80                    # 잘못 입력했습니다.
+student1.score = 122                    # 잘못 입력했습니다.
