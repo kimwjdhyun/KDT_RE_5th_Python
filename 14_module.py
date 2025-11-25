@@ -87,6 +87,9 @@ print(m.gcd(12, 8))         # 4
 # lcm(x, y) : x와 y의 최소공배수
 print(m.lcm(12, 8))         # 24
 
+
+
+
 # 실습 4. math 모듈 사용해보기
 # 문제 1. 실제 거리 계산 : 좌표 두점 사이 거리 구하기
 
@@ -109,3 +112,31 @@ def classroom(s, t):
     print("최소 공배수", lcm)     # 최소 공배수 72
 classroom(18, 24)
 
+
+
+# 해설
+# 실습2.
+# 📌 문제 1. 실제 거리 계산: 좌표 두 점 사이 거리 구하기
+
+x1, y1 = map(int, input("x1,y1을 입력해주세요.").split(","))
+# x1, y1 = int(x1), int(y1)
+x2, y2 = map(int, input("x2,y2을 입력해주세요.").split(","))
+
+# 피타고라스 정리: 거리 = sqrt((x2-x1)^2 + (y2-y1)^2)
+dist = round(m.sqrt(m.pow((x2-x1), 2) + m.pow((y2-y1), 2)), 2)
+
+print(f"두 점 사이의 거리는: {dist}")
+
+
+# 📌 문제 2. 상품 나누기: 최소 공배수와 최대 공약수
+a = 18
+b = 24
+
+# 최대공약수
+gcd = m.gcd(a, b)
+
+# 최소공배수
+lcm = m.lcm(a, b)
+
+print(f"최대 간식 개수: {gcd}")
+print(f"최소 간식 개수: {lcm}")
