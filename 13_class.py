@@ -459,3 +459,48 @@ triangle = Triangle(3, 10, 6)
 triangle.printinfo()        # 변의 개수 : 3, 밑변의 길이 : 10
 triangle.area()             # 삼각형의 넓이 : 30.0
 
+
+# 추상 클래스(Abstract Class)
+# 클래스의 구조를 정의하는 클래스
+
+from abc import ABC, abstractmethod\
+
+class Animal(ABC):
+    # 추상 메서드
+    @abstractmethod
+    def bark(self):
+        pass
+
+class Dog(Animal):
+    def bark(self):
+        print("왈왈")
+
+# a = Animal() # TypeError: Can't instantiate abstract class Animal with abstract method bark
+a = Dog()
+a.bark()        # 왈왈
+
+# 실습 2. 추상 클래스 연습
+# 문제 1. 추상 클래스 Payment 구현
+
+from abc import ABC, abstractmethod
+
+class Payment(ABC):
+    @abstractmethod
+    def pay(self, amount):
+        pass
+
+class CardPayment(Payment):
+    def pay(self, amount):
+        self.amount = amount
+        print(f"카드로 {amount}원을 결제합니다.")
+
+class CashPayment(Payment):
+    def pay(self, amount):
+        self.amount = amount
+        print(f"현금으로 {amount}원을 결제합니다.")
+
+card_payment = CardPayment()
+card_payment.pay(500000000000)              # 카드로 500000000000원을 결제합니다.
+
+cash_payment = CashPayment()
+cash_payment.pay(34564564)              # 현금으로 34564564원을 결제합니다.
