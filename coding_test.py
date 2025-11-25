@@ -69,3 +69,45 @@ def solution(numer1, denom1, numer2, denom2):
 def solution(numbers):
     answer = [i*2 for i in numbers]
     return answer
+
+def solution(n):
+    return list(range(1, n+1, 2))
+n = 100
+print(solution(n))  
+
+def solution(n):
+    answer = 0
+    
+    if n % 7 == 0:
+        answer = n / 7
+    else:
+        answer = n // 7 + 1
+    return answer
+print(solution(15))  # 3
+print(solution(28))  # 4
+
+
+def solution(n):
+    return (n - 1) // 7 + 1
+print(solution(15))  # 3
+print(solution(28))  # 4
+
+def solution(n):
+    answer = 1
+    
+    while (6 * answer) % n != 0:
+         answer += 1
+         return answer
+    
+def solution(slice, n):
+    slice = n / slice
+    if n % slice == 0:
+        return n // slice
+    else:
+        return n // slice + 1
+    
+print(solution(7, 10))  # 2
+print(solution(4, 12))  # 3
+
+def solution(numbers):
+    return sum(numbers) / len(numbers)
