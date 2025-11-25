@@ -504,3 +504,29 @@ card_payment.pay(500000000000)              # 카드로 500000000000원을 결�
 
 cash_payment = CashPayment()
 cash_payment.pay(34564564)              # 현금으로 34564564원을 결제합니다.
+
+# 해설
+class Payment(ABC):
+    @abstractmethod
+    def pay(self, amount):
+        pass
+
+class CardPayment(Payment):
+    def __init__(self):
+        super().__init__() # 생략하고 pass 사용 가능
+    def pay(self, amount):
+        self.amount = amount
+        print(f"카드로 {amount}원을 결제합니다.")
+
+class CashPayment(Payment):
+    def __init__(self):
+        pass
+    def pay(self, amount):
+        self.amount = amount
+        print(f"현금으로 {amount}원을 결제합니다.")
+
+card_payment = CardPayment()
+card_payment.pay(10000)              # 카드로 10000원을 결제합니다.
+
+cash_payment = CashPayment()
+cash_payment.pay(4000)              # 현금으로 4000원을 결제합니다
