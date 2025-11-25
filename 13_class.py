@@ -75,6 +75,7 @@ print("넓이는", Rectangle.area()) # 넓이는 144
 
 '''
 
+'''
 # 클래스 변수
 # - 클래스가 가지고 있는 변수
 # 모든 인스스턴스가 공유할 수 있음
@@ -225,6 +226,8 @@ print(ex1.value) # 100 : @property로 속성 처럼 사용
 ex1.value = -100
 print(ex1.value) # 유효하지 않은 값입니다., 100
 
+'''
+
 # 실습 3. 접근 제어와 정보은닉 연습
 # 문제 1. UserAccount 클래스 : 비밀번호 보호
 class UserAccount:
@@ -256,6 +259,30 @@ user.check_password(123321) # 로그인 성공!
 user.check_password(12321) # 비밀번호가 틀렸습니다.
 user.changed_password(123321, 0) # 이전 비밀번호입니다. 변경하시겠습니까?
 
+# 해설
+# 실습 3. 문제 1.
+
+class UserAccount:
+    def __init__(self, username, password):
+        self.username = username
+        self.__password = password
+    
+    def changed_password(self, old_pw, new_pw):
+        if old_pw == self.__password:
+            self.__password = new_pw
+            print("비밀번호가 변경되었습니다.")
+        else:
+            print("비밀번호가 일치하지 않습니다.")
+    def check_password(self, password):
+        return self.__password == password
+
+uesr = UserAccount("user1", "pass123")
+print(user.username)
+# print(user.__password) # AttributeError
+
+user.check_password("pass123") # True
+user.changed_password("wrongpass", "newpass")
+
 # 문제 2. Student 클래스 : 성적 검증(@property 사용)
 class Student:
     def __init__(self, name, score):
@@ -283,3 +310,152 @@ student1.score = 95
 print(f"점수: {student1.score}")        # 점수 : 95
 student1.score = -80                    # 잘못 입력했습니다.
 student1.score = 122                    # 잘못 입력했습니다.
+
+# 문제 2. 해설
+
+class Student:
+    def __init__(self, name, score):
+        self.name = name
+        self.__score = score
+ 
+    @property # getter의 역할
+    def score(self):
+        return self.__score
+    
+    @score.setter
+    def score(self, value):
+        if 0 <= value <= 100:
+            self.__score = value
+        else:
+            raise ValueError("성적은 0에서 100사이여야 합니다.")
+        
+s1 = Student("alice", "85")
+print(s1.name)
+print(s1.score) # 85
+s1.score = 95
+print(s1.score)
+
+
+# 상속
+# 부모 클래스의 속성과 메서드를 물려받아 새로운 자녀 클래스를 만드는 것
+
+# 상속 기본 문법
+# 부모 클래스
+
+# class Animal:
+#     def __init__(self, name):
+#         self.name = name
+
+#     def bark(seflv):
+#         print("동물이 울음소리를 냅니다.")
+
+# # 자식 클래스
+
+# class Dog(Animal):
+#     pass
+
+# dog = Dog("호굼이")
+# dog.bark()
+# print(dog.name)
+
+# 동물이 울음소리를 냅니다.
+# 호굼이
+
+
+# super() 사용
+class Animal:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def bark(seflv):
+        print("동물이 울음소리를 냅니다.")
+
+# 자식 클래스
+
+class Dog(Animal):
+    def __init__(self, name, age):
+        # super는 부모 클래스를 가리킴
+        super().__init__(name, age)
+
+dog = Dog("호굼이", 8) # age 추가안하면 에러 발생!
+dog.bark()
+print(dog.name) # 호굼이
+print(dog.age) # 8
+
+
+
+# 오버라이딩 사용
+
+class Animal:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def bark(seflv):
+        print("동물이 울음소리를 냅니다.")
+
+
+
+class Dog(Animal):
+    def __init__(self, name, age, species): # 부모클래스에 없는 속성도 자식 클래스에서 추가 할수 있다
+        super().__init__(name, age)
+        self.species = species
+
+    # 오버라이딩
+    def bark(self):
+        super().bark() # 부모클래스에서 가져옴 : 동물이 울음소리를 냅니다.
+        print("왈왈")
+
+dog = Dog("호굼이", 9, "샤페이") 
+dog.bark()          # 왈왈
+print(dog.name)     # 호굼이
+print(dog.age)      # 9
+print(dog.species)  # 샤페이
+
+# 실습 1. 상속과 오버라이딩 연습
+# 문제 1. shape 클래스 오버라이딩
+
+class Shape:
+    def __init__(self, sides, base):
+        self.sides = sides
+        self.base = base
+
+    def printinfo(self):
+        print(f"변의 개수 : {self.sides}, 밑변의 길이 : {self.base}")
+
+    def area(self):
+        print("넓이 계산이 정의되지 않았습니다.")
+
+shape=Shape(4, 10)
+shape.area()
+shape.printinfo()           # 넓이 계산이 정의되지 않았습니다.
+
+
+class Rectangle(Shape):
+    def __init__(self, sides, base, height):
+        super().__init__(sides, base)
+        self.height = height
+    
+    def area(self):
+        value = self.base * self.height
+        print(f"사각형의 넓이 : {value}")
+
+rectangle = Rectangle(4, 10, 6)
+rectangle.printinfo()        # 변의 개수 : 4, 밑변의 길이 : 10
+rectangle.area()             # 사각형의 넓이 : 60
+
+
+class Triangle(Shape):
+    def __init__(self, sides, base, height):
+        super().__init__(sides, base)
+        self.height = height
+    
+    def area(self):
+        value = (self.base * self.height) / 2
+        print(f"삼각형의 넓이 : {value}")
+
+triangle = Triangle(3, 10, 6)
+triangle.printinfo()        # 변의 개수 : 3, 밑변의 길이 : 10
+triangle.area()             # 삼각형의 넓이 : 30.0
+
