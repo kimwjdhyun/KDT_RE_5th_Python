@@ -558,7 +558,7 @@ print(sys.platform)     # win32
 
 # 프로그램 종료
 print("프로그램 시작")       # 프로그램 시작
-# sys.exit()   # 강제 종료
+sys.exit()   # 강제 종료
 print("실행되지 않는 코드")  # 실행되지 않는 코드
 
 
