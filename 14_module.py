@@ -454,7 +454,7 @@ print(parsed)         # time.struct_time(tm_year=2025, tm_mon=11, tm_mday=26, tm
 t.sleep(1)   # 1초 일시 정지
 print("time sleep")
 
-# # 시간 측정하기
+# 시간 측정하기
 # start = t.time()
 
 # for i in range(5):
@@ -472,36 +472,114 @@ print("time sleep")
 
 # 실습 4. 타자 연습 게임 만들기
 
-import time as t
-import random as r
+# import time as t
+# import random as r
 
-num = 0
-words = [
-    "apple", "banana", "orange", "grape", "lemon",
-    "peach", "melon", "cherry", "plum", "pear",
-    "school", "friend", "family", "flower", "garden",
-    "window", "bottle", "pencil", "summer", "winter",
-    "happy", "future", "travel", "animal", "market",
-    "doctor", "planet", "energy", "nature", "memory"
-]
+# num = 0
+# words = [
+#     "apple", "banana", "orange", "grape", "lemon",
+#     "peach", "melon", "cherry", "plum", "pear",
+#     "school", "friend", "family", "flower", "garden",
+#     "window", "bottle", "pencil", "summer", "winter",
+#     "happy", "future", "travel", "animal", "market",
+#     "doctor", "planet", "energy", "nature", "memory"
+# ]
 
-input("[ 타자 연습게임 ] \n 엔터키를 누르면 시작합니다.")
-start = t.time()
+# input("[ 타자 연습게임 ] \n 엔터키를 누르면 시작합니다.")
+# start = t.time()
 
-for word in r.choices(words, k=10):
-    while True:
-        user_input = input(f"{num+1}. {word} : ")
+# for word in r.choices(words, k=10):
+#     while True:
+#         user_input = input(f"{num+1}. {word} : ")
         
-        if user_input == word:
-            print("정답입니다!")
-            num += 1
-            break
-        else:
-            print("오타! 다시 도전!")
+#         if user_input == word:
+#             print("정답입니다!")
+#             num += 1
+#             break
+#         else:
+#             print("오타! 다시 도전!")
 
-    if num == 10:
-        print("게임 클리어!")
-        break
+#     if num == 10:
+#         print("게임 클리어!")
+#         break
 
-end = t.time()
-print(f"총 타자 시간 : {end - start:.2f}초 입니다!")
+# end = t.time()
+# print(f"총 타자 시간 : {end - start:.2f}초 입니다!")
+
+
+#해설
+# 실습 6. 타자 연습게임
+# import time as t
+# import random as r
+
+# words = [
+#     "apple", "banana", "orange", "grape", "lemon",
+#     "peach", "melon", "cherry", "plum", "pear",
+#     "school", "friend", "family", "flower", "garden",
+#     "window", "bottle", "pencil", "summer", "winter",
+#     "happy", "future", "travel", "animal", "market",
+#     "doctor", "planet", "energy", "nature", "memory"
+# ]
+# n = 1
+# input("[ 타자 게임 ] 준비되면 엔터!")
+# start = t.time()
+
+# while n < 11:
+#     print(f"{n}번 문제")
+#     question = r.choice(words)
+#     print(question)
+    
+#     while True:
+#         user_answer = input()
+#         if question == user_answer:
+#             print("통과!")
+#             n += 1
+#             break
+
+#         else:
+#             print("오타! 다시 도전!")
+
+# end = t.time()
+# play_time = end - start
+# print(f"총 소요시간 {play_time:.2f}초")
+
+
+
+# sys 모듈
+# 파이썬 이터프리터와 관련된 다양한 기능 제공
+
+import sys
+
+# 1. 파이썬 버전 정보
+print(sys.version)      # 3.14.0 (tags/v3.14.0:ebf955d, Oct  7 2025, 10:15:03) [MSC v.1944 64 bit (AMD64)]
+
+# 운영체제
+print(sys.platform)     # win32
+
+# 프로그램 종료
+print("프로그램 시작")       # 프로그램 시작
+# sys.exit()   # 강제 종료
+print("실행되지 않는 코드")  # 실행되지 않는 코드
+
+
+
+# os 모듈
+# 운영체제와 상호작용할 수 있도록 도와주는 기능 제공
+
+import os
+
+# getcwd() : 현재 작업 디렉토리 반환
+print(os.getcwd())    # C:\Users\dkreh\Desktop\KDT_RE_5th\2_Python
+
+# listdir() : 디렉토리 내 파일, 디렉토리 목록 반환
+print(os.listdir())  # ['.git', '00_practice.py', '01_variable.py', '02_data_type.py', '03_opperator.py', '04_input.py', '05_list.py', '06_tuple.py', '07_set.py', '08_dictionary.py', '09_if.py', '10_for.py', '11_while.py', '12_function.py', '13_class.py', '14_module.py', 'calc.py', 'coding_test.py', 'hello.py', 'my_package', 'python_study', '__pycache__']
+
+# 폴더 생성
+folder_name = "sample_folder"
+if not os.path.exists(folder_name):
+    os.mkdir(folder_name)
+else:
+    print(f"{folder_name} 폴더가 이미 존재합니다.")
+
+print(os.listdir())  # 'sample_folder' 생성!
+
