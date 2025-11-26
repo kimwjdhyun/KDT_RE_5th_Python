@@ -187,24 +187,46 @@ print(sorted(lotto(6)))
 # [8, 9, 21, 23, 26, 39]
 # [10, 12, 14, 23, 32, 45]
 
+# 해설
+# 실습3. 로또 번호 뽑기
+# 1 ~ 45사이의 정수중에서 랜덤으로 6개의 숫자를 뽑는다
+# 6개의 숫자는 중복이 있어서는 x
+# 오름차순으로 결과를 정렬한다!
+
+# 1) 짧은 식
+# result = sorted(random.sample(range(1, 46), k=6))
+# print(result)
+
+# # 2) 반복묺 활용
+# lotto = []
+# while len(lotto) < 6:
+#     number = random.randint(1, 45)
+#     if number in lotto:
+#         continue
+
+#     lotto.append(number)
+
+# lotto.sort()
+# print(lotto)
+
 # 실습 2. 가위 바위 보 게임 만들기
-import random as r 
+# import random as r 
 
-user = input("무엇을 낼지 골라주세요 : ")
+# user = input("무엇을 낼지 골라주세요 : ")
 
-def game(user):
-    computer = r.choice(["가위", "바위", "보"])
-    if user == computer:
-        return " 무승부 "
-    elif user == "가위" and computer == "보":
-        return " 승리! "
-    elif user == "바위" and computer == "가위":
-        return " 승리! "
-    elif user == "보" and computer == "바위":
-        return " 승리! "
-    else:
-        return " 패배! "
-print(game(user))   
+# def game(user):
+#     computer = r.choice(["가위", "바위", "보"])
+#     if user == computer:
+#         return " 무승부 "
+#     elif user == "가위" and computer == "보":
+#         return " 승리! "
+#     elif user == "바위" and computer == "가위":
+#         return " 승리! "
+#     elif user == "보" and computer == "바위":
+#         return " 승리! "
+#     else:
+#         return " 패배! "
+# print(game(user))   
 # 무엇을 낼지 골라주세요 : 보
 #  무승부
 # 무엇을 낼지 골라주세요 : 바위
@@ -213,3 +235,91 @@ print(game(user))
 #  승리!
 # 무엇을 낼지 골라주세요 : 가위
 #  패배!
+
+# 해설
+# 3판 2선승 가위바위보
+# while문 활용
+# 실습4. 가위 바위 보 게임 만들기
+# RPS = ["가위", "바위", "보"]
+# win_count = 0
+
+# while win_count < 3:
+#     com_choice = random.choice(RPS)
+#     user_choice = input("가위, 바위, 보 중에 골라주세요!✌️✊🤚: ")
+
+#     print(f"유저의 선택: {user_choice}")
+#     print(f"컴퓨터의 선택: {com_choice}")
+
+#     if user_choice == com_choice:
+#         print("비겼습니다")
+#     elif ((user_choice == "가위" and com_choice == "보") or
+#           (user_choice == "바위" and com_choice == "가위") or
+#           (user_choice == "보" and com_choice == "바위")):
+#         print("이겼습니다")
+#         win_count += 1
+#     elif user_choice in RPS:
+#         print("졌습니다")
+#     else:
+#         print("잘못된 입력이에요")
+
+
+# datetime 모듈 : 날짜와 시간과 관련된 기능을 제공하는 모듈
+# 날짜와 시간의 생성, 조작, 형식 변환과 같은 시간 관련 기능을 제공
+
+import datetime as dt
+
+# 1. 날짜 / 시간 구하기
+# 현재 날짜와 시간 구하기
+now = dt.datetime.now()
+print(now)    # 2025-11-26 10:19:59.636853  
+
+# 오늘 날짜만 구하기
+today = dt.date.today()
+print(today)      # 2025-11-26
+
+# 2. 날짜 / 시간 형식 변환
+formatted = now.strftime("%Y-%m-%d %H:%M:%S")
+print(formatted)            # 2025-11-26 10:22:54
+
+parsed = dt.datetime.strptime(formatted, "%Y-%m-%d %H:%M:%S")
+print(parsed)               # 2025-11-26 10:26:10
+
+# 3. 날짜 / 시간 연산
+d = dt.date(2025, 5, 8)
+passed_time = today - d
+print(f"{passed_time.days}일 지났습니다.")   # 202일 지났습니다.
+
+# 4. 요일반환 : weekday
+# 0 : 월요일 ~ 7 : 일요일
+
+days = ["월", "화", "수", "목", "금", "토", "일"]
+day_num = today.weekday()
+print(days[day_num], "요일")                        # 수 요일
+
+# datetime 또는 date 객체에는 년 / 월 / 일 / 시간 등이 속성으로 들어있음.
+print(dt.datetime.now().year)                        # 2025
+print(dt.datetime.now().month)                       # 11
+print(dt.datetime.now().day)                         # 26
+print(dt.datetime.now().hour)                        # 10
+print(dt.datetime.now().minute)                      # 37
+print(dt.datetime.now().second)                      # 15
+
+# 실습 3. 다음 생일까지 남은 날짜 계산하기
+import datetime as dt
+
+def birthday(month, day):
+    today = dt.date.today()
+    year = dt.datetime.now().year
+    next_bd = dt.date(year, month, day)
+    left_bd = (next_bd - today).days
+    if left_bd < 0:
+        next_bd = dt.date(year + 1, month, day)
+        left_bd = (next_bd - today).days
+        return f"생일까지 {left_bd}일 남았습니다!"
+    elif left_bd == 0:
+        return "생일 축하합니다!"
+    else:
+        return f"생일까지 {left_bd}일 남았습니다!"
+print(birthday(5, 8))       # 생일까지 163일 남았습니다!
+print(birthday(11, 26))     # 생일 축하합니다!
+print(birthday(12, 25))     # 생일까지 29일 남았습니다!
