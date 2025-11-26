@@ -322,4 +322,186 @@ def birthday(month, day):
         return f"생일까지 {left_bd}일 남았습니다!"
 print(birthday(5, 8))       # 생일까지 163일 남았습니다!
 print(birthday(11, 26))     # 생일 축하합니다!
-print(birthday(12, 25))     # 생일까지 29일 남았습니다!
+print(birthday(1, 20))     # 생일까지 29일 남았습니다!
+
+
+# # 해설
+# # 실습 3. 다음 생일까지 남은 날짜 계산하기
+# birth_month, birtg_day = map(int, input("생일을 입력하세요. (예 03-14):").split("-"))
+
+# # 오smf 날짜 구하기
+# today = dt.date.today()
+
+# # 올해 생일을 date 객체로 변환
+# birth_this_year = dt.date(today.year, birth_month, birtg_day)
+
+# # 오늘 늘짜와 올해의 생일을 비교
+# if today > birth_this_year:
+#     # 올해 생일이 지났으면 내년으로 설정
+#     birth_next = dt.date(today.year + 1, birth_month, birtg_day)
+# else:
+#     #올해로 설정
+#     birth_next = birth_this_year
+
+# # 남은 일수 계산
+# days_left = (birth_next - today).days
+
+# print(f"다음 생일까지 {days_left}일 남았습니다!")
+
+
+# calender 모듈 
+# 날짜와 달력 관련 기능을 제공
+
+import calendar as c
+
+# 1. 달력 조회
+print(c.prmonth(2025, 9)) # 특정 연도의 특정 달 달력 출력
+print(c.prcal(2025)) # 특정 연도의 달력 출력
+
+
+#    September 2025
+# Mo Tu We Th Fr Sa Su
+#  1  2  3  4  5  6  7
+#  8  9 10 11 12 13 14
+# 15 16 17 18 19 20 21
+# 22 23 24 25 26 27 28
+# 29 30
+
+
+#                                   2025
+
+#       January                   February                   March
+# Mo Tu We Th Fr Sa Su      Mo Tu We Th Fr Sa Su      Mo Tu We Th Fr Sa Su
+#        1  2  3  4  5                      1  2                      1  2
+#  6  7  8  9 10 11 12       3  4  5  6  7  8  9       3  4  5  6  7  8  9
+# 13 14 15 16 17 18 19      10 11 12 13 14 15 16      10 11 12 13 14 15 16
+# 20 21 22 23 24 25 26      17 18 19 20 21 22 23      17 18 19 20 21 22 23
+# 27 28 29 30 31            24 25 26 27 28            24 25 26 27 28 29 30
+#                                                     31
+
+#        April                      May                       June
+# Mo Tu We Th Fr Sa Su      Mo Tu We Th Fr Sa Su      Mo Tu We Th Fr Sa Su
+#     1  2  3  4  5  6                1  2  3  4                         1
+#  7  8  9 10 11 12 13       5  6  7  8  9 10 11       2  3  4  5  6  7  8
+# 14 15 16 17 18 19 20      12 13 14 15 16 17 18       9 10 11 12 13 14 15
+# 21 22 23 24 25 26 27      19 20 21 22 23 24 25      16 17 18 19 20 21 22
+# 28 29 30                  26 27 28 29 30 31         23 24 25 26 27 28 29
+#                                                     30
+
+#         July                     August                  September
+# Mo Tu We Th Fr Sa Su      Mo Tu We Th Fr Sa Su      Mo Tu We Th Fr Sa Su
+#     1  2  3  4  5  6                   1  2  3       1  2  3  4  5  6  7
+#  7  8  9 10 11 12 13       4  5  6  7  8  9 10       8  9 10 11 12 13 14
+# 14 15 16 17 18 19 20      11 12 13 14 15 16 17      15 16 17 18 19 20 21
+# 21 22 23 24 25 26 27      18 19 20 21 22 23 24      22 23 24 25 26 27 28
+# 28 29 30 31               25 26 27 28 29 30 31      29 30
+
+#       October                   November                  December
+# Mo Tu We Th Fr Sa Su      Mo Tu We Th Fr Sa Su      Mo Tu We Th Fr Sa Su
+#        1  2  3  4  5                      1  2       1  2  3  4  5  6  7
+#  6  7  8  9 10 11 12       3  4  5  6  7  8  9       8  9 10 11 12 13 14
+# 13 14 15 16 17 18 19      10 11 12 13 14 15 16      15 16 17 18 19 20 21
+# 20 21 22 23 24 25 26      17 18 19 20 21 22 23      22 23 24 25 26 27 28
+# 27 28 29 30 31            24 25 26 27 28 29 30      29 30 31
+
+
+# 텍스트로 값을 반환
+
+print(c.month(2025, 11))
+#    November 2025
+# Mo Tu We Th Fr Sa Su
+#                 1  2
+#  3  4  5  6  7  8  9
+# 10 11 12 13 14 15 16
+# 17 18 19 20 21 22 23
+# 24 25 26 27 28 29 30
+
+# 요일 반환
+print(c.weekday(2025, 11, 26))  # 2 (수요일) : 0~6 (월~일), 인덱스 값으로 반환
+
+print(c.weekday(2026, 1, 20)) # 1 (화요일)
+print(c.weekday(2026, 4, 16)) # 3 (목요일)
+print(c.weekday(2026, 5, 8))  # 4 (금요일)
+print(c.weekday(1999, 1, 20)) # 2 (수요일)
+print(c.weekday(1998, 5, 8))  # 4 (금요일)
+
+# time 모듈
+# 시간의 측정, 지연, 변환과 같은 시간 관련 기능을 제공
+
+import time as t
+
+# 1. 시간 반환
+# time()
+# Unix 타임스탬프로 반환 (1970.1.1부터 경과 초)
+print(t.time())         # 1764128037.3967812
+
+# ctime()
+# 현재 시간의 문자열 형태 반환
+print(t.ctime())         # Wed Nov 26 12:33:57 2025
+print(t.ctime(0))        # 기준시로 반환 :Thu Jan  1 09:00:00 1970
+
+# strftime() : 원하는 포맷의 문자열로 시간 객체를 변환
+it = t.localtime()
+formatted = t.strftime("%Y-%m-%d %H:%M:%S", it)
+print(formatted)         # 2025-11-26 12:37:28
+
+# strptime() : 문자열을 struct_time 객체로 변환
+parsed = t.strptime(formatted, "%Y-%m-%d %H:%M:%S")
+print(parsed)         # time.struct_time(tm_year=2025, tm_mon=11, tm_mday=26, tm_hour=12, tm_min=40, tm_sec=1, tm_wday=2, tm_yday=330, tm_isdst=-1)
+
+# 2. 시간 지연
+# sleep(seconds) : 지정한 초만큼 프로그램이 일시 정지
+t.sleep(1)   # 1초 일시 정지
+print("time sleep")
+
+# # 시간 측정하기
+# start = t.time()
+
+# for i in range(5):
+#     print(i)
+#     t.sleep(1)
+
+# end = t.time()
+# print(f"수행 시간 : {end - start: .2f}초")
+# 0
+# 1
+# 2
+# 3
+# 4
+# 수행 시간 :  5.01초
+
+# 실습 4. 타자 연습 게임 만들기
+
+import time as t
+import random as r
+
+num = 0
+words = [
+    "apple", "banana", "orange", "grape", "lemon",
+    "peach", "melon", "cherry", "plum", "pear",
+    "school", "friend", "family", "flower", "garden",
+    "window", "bottle", "pencil", "summer", "winter",
+    "happy", "future", "travel", "animal", "market",
+    "doctor", "planet", "energy", "nature", "memory"
+]
+
+input("[ 타자 연습게임 ] \n 엔터키를 누르면 시작합니다.")
+start = t.time()
+
+for word in r.choices(words, k=10):
+    while True:
+        user_input = input(f"{num+1}. {word} : ")
+        
+        if user_input == word:
+            print("정답입니다!")
+            num += 1
+            break
+        else:
+            print("오타! 다시 도전!")
+
+    if num == 10:
+        print("게임 클리어!")
+        break
+
+end = t.time()
+print(f"총 타자 시간 : {end - start:.2f}초 입니다!")
