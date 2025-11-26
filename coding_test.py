@@ -109,5 +109,74 @@ def solution(slice, n):
 print(solution(7, 10))  # 2
 print(solution(4, 12))  # 3
 
-def solution(numbers):
-    return sum(numbers) / len(numbers)
+# def solution(numbers):
+#     return sum(numbers) / len(numbers)
+
+
+
+# def func1(num):
+#     if 0 > num:
+#         return 0
+#     else:
+#         return num
+
+# def func2(num):
+#     if num > 0:
+#         return 0
+#     else:
+#         return num
+
+# def func3(station):
+#     num = 0
+#     for people in station:
+#         if people == "Off":
+#             num += 1
+#     return num
+
+# def func4(station):
+#     num = 0
+#     for people in station:
+#         if people == "On":
+#             num += 1
+#     return num
+
+
+# def solution(seat, passengers):
+#     num_passenger = 0
+#     for station in passengers:
+#         num_passenger += func4(station)
+
+#         num_passenger -= func3(station)
+
+#     answer = func1(seat - num_passenger) + func2(num_passenger - seat)
+
+#     return answer
+
+def solution(nickname):
+    answer = ""
+    for letter in nickname:
+        if letter == "l":
+            answer += "I"
+        elif letter == "w":
+            answer += "vv"
+        elif letter == "W":
+            answer += "VV"
+        elif letter == "O":
+            answer += "0"
+        else:
+            answer += letter
+    if len(answer) < 3:
+        answer += "o"
+    if len(answer) > 8:
+        answer = answer[:8]
+    return answer
+
+def solution(numbers, our_score, score_list):
+    answer = []
+    for i in range(len(numbers)):
+        if numbers[our_score[i]] == score_list[i]:
+            answer.append("Same")
+        else:
+            answer.append("Different")
+    
+    return answer
