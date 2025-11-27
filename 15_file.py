@@ -194,11 +194,12 @@ while user_count < 3:
     if login_user in users and users[login_user] == login_pw:
         user_count += 1
         print("로그인 성공!")
+
+
         if login_user in users and users[login_user] == login_pw:
             with open("member_tel.txt", "a", encoding="utf-8") as f:
-                tel = input("전화번호를 입력하세요. : ")
-                f.write(f"{login_user} : {tel} \n")
-
+                tel_num = input("전화번호를 입력하세요. : ")
+                f.write(f"{login_user} : {tel_num} \n")
     else:
         print("로그인 실패!")
     
