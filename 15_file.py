@@ -101,12 +101,12 @@ with open("words.txt", "r", encoding="utf-8") as f1:
 # ['pear']
 
 # 예제 2. 입력받아 파일 쓰기
-# with open("with_example.txt", "a", encoding="utf-8") as f1:
-#     while True:
-#         text = input("저장할 내용을 입력해주세요(종료 : z) : ")
-#         if text == "Z" or text == "z":
-#             break
-#         f1.write(text + "\n")
+with open("with_example.txt", "a", encoding="utf-8") as f1:
+    while True:
+        text = input("저장할 내용을 입력해주세요(종료 : z) : ")
+        if text == "Z" or text == "z":
+            break
+        f1.write(text + "\n")
 
 # 저장할 내용을 입력해주세요(종료 : z) : 안녕하세요
 # 저장할 내용을 입력해주세요(종료 : z) : 반갑습니다
@@ -119,47 +119,47 @@ with open("words.txt", "r", encoding="utf-8") as f1:
 
 # 문제 1. 회원 명부 작성하기
 
-# users = []
+users = []
 
-# for i in range(3):
-#     username = input(f"사용자 이름 {i+1} : ")
-#     password = input(f"비밀번호 {i+1} : ")
-#     users.append((username, password))
+for i in range(3):
+    username = input(f"사용자 이름 {i+1} : ")
+    password = input(f"비밀번호 {i+1} : ")
+    users.append((username, password))
 
-# with open("member.txt", "a", encoding="utf-8") as f:
-#     for user, pw in users:
-#         f.write(user + "\n")
-#         f.write(pw + "\n")
-# with open("member.txt", "r", encoding="utf-8") as f:
-#     member = f.read().split()
-#     print(member)
+with open("member.txt", "a", encoding="utf-8") as f:
+    for user, pw in users:
+        f.write(user + "\n")
+        f.write(pw + "\n")
+with open("member.txt", "r", encoding="utf-8") as f:
+    member = f.read().split()
+    print(member)
 
 
-# ["kimwjdhyun","12321", "wjdhyun", "123321", "kimhyun", "123123"]
+["kimwjdhyun","12321", "wjdhyun", "123321", "kimhyun", "123123"]
 
 # 문제 2. 회원 명부를 이용한 로그인 기능
 
 
-# users = {}
-# user_count = 0
+users = {}
+user_count = 0
 
-# with open("member.txt", "r", encoding="utf-8") as f:
-#     lines = f.read().splitlines()
+with open("member.txt", "r", encoding="utf-8") as f:
+    lines = f.read().splitlines()
 
-#     for i in range(0, len(lines), 2):
-#         username = lines[i]
-#         password = lines[i + 1]
-#         users[username] = password
+    for i in range(0, len(lines), 2):
+        username = lines[i]
+        password = lines[i + 1]
+        users[username] = password
 
-# while user_count < 3:
-#     login_user = input("사용자 이름을 입력하세요: ")
-#     login_pw = input("비밀번호를 입력하세요: ")
+while user_count < 3:
+    login_user = input("사용자 이름을 입력하세요: ")
+    login_pw = input("비밀번호를 입력하세요: ")
 
-#     if login_user in users and users[login_user] == login_pw:
-#         user_count += 1
-#         print("로그인 성공!")
-#     else:
-#         print("로그인 실패!")
+    if login_user in users and users[login_user] == login_pw:
+        user_count += 1
+        print("로그인 성공!")
+    else:
+        print("로그인 실패!")
 
 # 사용자 이름을 입력하세요: kimwjdhyun
 # 비밀번호를 입력하세요: 12321
