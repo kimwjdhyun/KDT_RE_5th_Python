@@ -1,6 +1,3 @@
-kimwjdhyun : 0101234321
-wjdhyun : 01043211234
-kimhyun : 01043214321
-kimwjdhyun : 01012341234 
-wjdhyun : 01012344321 
-kimhyun : 01043214321 
+kimwjdhyun : 01012344321
+wjdhyun : 01043214321
+kimhyun : 01012341234

@@ -176,6 +176,8 @@ with open("words.txt", "r", encoding="utf-8") as f1:
 
 # 문제 3. 로그인 성공시 전화번호 저장하기
 
+import os
+
 users = {}
 user_count = 0
 
@@ -188,18 +190,107 @@ with open("member.txt", "r", encoding="utf-8") as f:
         users[username] = password
 
 while user_count < 3:
-    login_user = input("사용자 이름을 입력하세요: ")
-    login_pw = input("비밀번호를 입력하세요: ")
+    login_user = input("사용자 이름을 입력하세요 : ")
+    login_pw = input("비밀번호를 입력하세요 : ")
 
     if login_user in users and users[login_user] == login_pw:
         user_count += 1
         print("로그인 성공!")
 
+        tel_exists = False
+        tel_data = {}
 
-        if login_user in users and users[login_user] == login_pw:
-            with open("member_tel.txt", "a", encoding="utf-8") as f:
-                tel_num = input("전화번호를 입력하세요. : ")
-                f.write(f"{login_user} : {tel_num} \n")
+        if os.path.exists("member_tel.txt"):
+            with open("member_tel.txt", 'r', encoding="utf-8") as f:
+                for line in f:
+                    if ":" in line:
+                        name, tel = line.strip().split(" : ")
+                        tel_data[name] = tel
+
+                        if name == login_user:
+                            tel_exists = True
+
+            if tel_exists:
+                 print(f"기존 전화번호: {tel_data[login_user]}")
+                 tel_num = input("새로운 전화번호를 입력하세요 (수정): ")
+            else:
+                 tel_num = input("전화번호를 입력하세요: ")
+        
+            tel_data[login_user] = tel_num
+        
+            with open("member_tel.txt", "w", encoding="utf-8") as f:
+                for name, tel in tel_data.items():
+                     f.write(f"{name} : {tel}\n")
+                     
     else:
         print("로그인 실패!")
     
+'''
+# 실습 1
+
+import os
+# ------------------------------------------
+# 1. 회원 3명 입력하여 파일에 저장
+# ------------------------------------------
+if os.path.exists("member.txt"):
+    print("member.txt가 이미 존재합니다. 회원 등록을 건너뜁니다.\n")
+else:
+    with open("member.txt", "w", encoding="utf-8") as f:
+        for i in range(3):
+            name = input(f"{i+1}번째 회원의 이름: ")
+            password = input(f"{i+1}번째 회원의 비밀번호: ")
+            f.write(f"{name},{password}\n")
+        
+print("\n[회원 명부 저장 완료]\n")
+
+
+# ------------------------------------------
+# 2. 로그인 과정
+# ------------------------------------------
+input_name = input("로그인 - 이름을 입력하세요: ")
+input_password = input("로그인 - 비밀번호를 입력하세요: ")
+
+login = False
+with open("member.txt", "r", encoding="utf-8") as f:
+    for line in f:
+        name, password = line.strip().split(",")
+        if input_name == name and input_password == password:
+            login = True
+            break
+        
+
+# ------------------------------------------
+# 3. 로그인 성공 시 전화번호 등록/수정
+# ------------------------------------------
+if login:
+    print("\n로그인 성공!")
+    
+    # 기존 전화번호 데이터 로드
+    phone_data = {}
+    
+    if os.path.exists("member_tel.txt"):
+        with open("member_tel.txt", "r", encoding="utf-8") as f:
+            for line in f:
+                name, phone = line.strip().split(",")
+                phone_data[name] = phone
+                
+    # 전화번호 입력
+    new_phone = input(f"{input_name}님의 전화번호를 입력하세요: ")
+    
+    # 추가 또는 수정
+    if input_name in phone_data:
+        print("기존 전화번호 수정")
+    else:
+        print("전화번호 새로 추가")
+    
+    phone_data[input_name] = new_phone
+    
+    # 전화번호 파일 갱신
+    with open("member_tel.txt", "w", encoding="utf-8") as f:
+        for name, phone in phone_data.items():
+            f.write(f"{name},{phone}\n")
+            
+    print("전화번호 저장 완료!")
+else:
+    print("\n로그인 실패!")
+'''
