@@ -151,7 +151,7 @@ print(solution(4, 12))  # 3
 #     answer = func1(seat - num_passenger) + func2(num_passenger - seat)
 
 #     return answer
-
+'''
 def solution(nickname):
     answer = ""
     for letter in nickname:
@@ -179,4 +179,21 @@ def solution(numbers, our_score, score_list):
         else:
             answer.append("Different")
     
+    return answer
+'''
+def solution(storage, num):
+    clean_storage = []
+    clean_num = []
+    for i in range(len(storage)):
+        if storage[i] in clean_storage:
+            pos = clean_storage.index(storage[i])
+            clean_num[pos] += num[i]
+        else:
+            clean_storage.append(storage[i])
+            clean_num.append(num[i])
+            
+    # 아래 코드에는 틀린 부분이 없습니다.
+            
+    max_num = max(clean_num)
+    answer = clean_storage[clean_num.index(max_num)]
     return answer
