@@ -93,32 +93,97 @@ except:
 #     print(f"에러 발생 변수는 {user_num}")
 
 
+# 실습 2 
 
-def calculate(num1, num2, op):
-    if op == "+":
-        return num1 + num2
-    elif op == "-":
-        return num1 - num2
-    elif op == "*":
-        return num1 * num2
-    elif op == "/":
-        return num1 / num2
-    else:
-        return "잘못된 연산자입니다."
+# def calculate(num1, num2, calc):
+#     if calc == "+":
+#         return num1 + num2
+#     elif calc == "-":
+#         return num1 - num2
+#     elif calc == "*":
+#         return num1 * num2
+#     elif calc == "/":
+#         return num1 / num2
+#     else:
+#         return "잘못된 연산자입니다."
 
-try:
-    num1 = int(input("숫자를 입력하세요 : "))
-    num2 = int(input("숫자를 입력하세요 : "))
+# try:
+#     num1 = int(input("숫자를 입력하세요 : "))
+#     num2 = int(input("숫자를 입력하세요 : "))
 
-    while True:
-        calc = input("연산자를 입력하세요 (+ - * /): ")
-        result = calculate(num1, num2, calc)
+#     while True:
+#         calc = input("연산자를 입력하세요 (+ - * /): ")
+#         result = calculate(num1, num2, calc)
 
-        if result != "잘못된 연산자입니다.":
-            print(f"{num1} {calc} {num2} = {result}")
-            break 
+#         if result != "잘못된 연산자입니다.":
+#             print(f"{num1} {calc} {num2} = {result}")
+#             break 
+#         else:
+#             print("잘못된 연산자입니다. 다시 입력하세요.")
+
+# except ValueError as v:
+#     print("숫자가 아닙니다.", v)
+
+# except ZeroDivisionError as z:
+#     print("0으로 나눌수 없습니다.", z)
+
+'''
+숫자를 입력하세요 : 10
+숫자를 입력하세요 : 0
+연산자를 입력하세요 (+ - * /): /
+0으로 나눌수 없습니다.  division by zero
+
+숫자를 입력하세요 : 3
+숫자를 입력하세요 : 10
+연산자를 입력하세요 (+ - * /): -
+3 - 10 = -7
+
+숫자를 입력하세요 : ㅅ
+숫자가 아닙니다. invalid literal for int() with base 10: 'ㅅ'
+
+숫자를 입력하세요 : 2
+숫자를 입력하세요 : 8
+연산자를 입력하세요 (+ - * /): ) 
+잘못된 연산자입니다. 다시 입력하세요.
+연산자를 입력하세요 (+ - * /): =
+잘못된 연산자입니다. 다시 입력하세요.
+연산자를 입력하세요 (+ - * /): /
+2 / 8 = 0.25
+'''
+'''
+# 해설
+def print_result(n1, op, n2, result):
+    print(f"{n1} {op} {n2} = {result}")
+
+
+while True:
+    try:
+        num1 = float(input("첫 번째 숫자 : "))
+        op = input("연산자( + - * /) :")
+        num2 = float(input("두 번째 숫자 : "))
+
+        if op not in ['+', '-', '*', '/']:
+            raise ValueError("잘못된 연산자입니다.")
+        if op == '/' and num2 == 0:
+            raise ZeroDivisionError("0으로 나눌 수 없습니다.")
+        
+        # 계산
+        if op =='+':
+            result = num1 + num2
+        elif op == '-':
+            result = num1 - num2
+        elif op == '*':
+            result = num1*num2
         else:
-            print("잘못된 연산자입니다. 다시 입력하세요.")
+            result = num1 / num2
 
-except ValueError as v:
-    print("숫자가 아닙니다.", v)
+        print_result(num1, op, num2, result)
+        break
+    except ValueError:
+        print("입력값이 잘못되었습니다. 다시 입력하세요.\n")
+    except ZeroDivisionError as e:
+        print(e)
+        print("다시 입력하세요.\n")
+    except Exception:
+        print("알 수 없는 오류가 발생했습니다. \n")
+'''    
