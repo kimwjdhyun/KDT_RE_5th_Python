@@ -1,6 +1,6 @@
 # 파일 입출력
 # - 저장장치에 저장된 파일을 읽어오거나 저장하는 작업
-
+'''
 # 파일열기와 닫기
 # 파일열기 : open()
 # open(파일경로, mode="r", encoding="원하는 인코딩 - utf-8")
@@ -224,8 +224,9 @@ while user_count < 3:
                      
     else:
         print("로그인 실패!")
-    
-'''
+
+
+
 # 실습 1
 
 import os
@@ -294,3 +295,39 @@ if login:
 else:
     print("\n로그인 실패!")
 '''
+
+
+# 바이너리 파일 읽기
+
+# import os
+
+# print(os.getcwd())
+
+# with open('./image/rabbit.jpg', 'rb') as f:
+#     img = f.read()
+#     print(img)
+
+# # 바이너리 파일 쓰기
+# with open("./image/output/rabbit_copy.jpg", "wb") as f:
+#     f.write(img)
+
+
+# pickle 모듈
+# 객체의 형태를 유지하면서 파일에 저장하고 불러올 수 있음
+
+import pickle as p
+
+# 리스트, 딕셔너리 파일 저장
+with open("pickle.txt", "wb") as f:
+    li = ['dog', 'cat']
+    dic = {1 : 'dog', 2 : 'cat'}
+
+    p.dump(li, f)
+    p.dump(dic, f)
+
+# 읽기
+with open("pickle.txt", "rb") as f:
+    li = p.load(f)
+    dic = p.load(f)
+
+    print(li, dic)  # ['dog', 'cat'] {1: 'dog', 2: 'cat'}
