@@ -181,6 +181,7 @@ def solution(numbers, our_score, score_list):
     
     return answer
 '''
+'''
 def solution(storage, num):
     clean_storage = []
     clean_num = []
@@ -197,3 +198,19 @@ def solution(storage, num):
     max_num = max(clean_num)
     answer = clean_storage[clean_num.index(max_num)]
     return answer
+'''
+
+a = int(input())
+b = int(input())
+def solution(a, b):
+    q = str(a)
+    w = str(b)
+    e = int(a)
+    r = int(b)
+    
+    if int(q+w) > 2*e*r:
+        return q + w
+    elif int(q+w) == 2*e*w:
+        return q + w
+    elif int(q+w) < 2*e*r:
+        return 2*e*r
