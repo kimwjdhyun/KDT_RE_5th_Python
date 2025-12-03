@@ -564,3 +564,21 @@ def solution(a, b, flag):
     elif flag != True:
         answer = int(a - b)
         return answer
+    
+def solution(code):
+    ret = ""
+    mode = 0
+    
+    for i in range(len(code)):
+        if code[i] == "1":
+            mode = 1 - mode 
+        else:
+            if mode == 0:
+                if i % 2 == 0:
+                    ret += code[idx]
+            else:
+                
+                if i % 2 == 1:
+                    ret += code[i]
+    
+    return ret if ret else "EMPTY"
