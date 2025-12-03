@@ -542,3 +542,25 @@ def print_5xn(string) :
     num = int(len(string) / 5)
     for i in range(num + 1) :
         print(string[i*5 : 5+5])
+
+def solution(ineq, eq, n, m):
+    answer = 0
+    
+    if n > m and ineq ==">":
+        answer = 1
+    elif n < m and ineq == "<":
+        answer = 1
+    elif n == m and eq == "=":
+        answer = 1
+
+    return answer
+
+def solution(a, b, flag):
+    answer = 0
+    
+    if flag == True:
+        answer = int(a + b)
+        return answer
+    elif flag != True:
+        answer = int(a - b)
+        return answer
