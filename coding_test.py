@@ -217,3 +217,19 @@ def solution(a, b):
     
 '''
 
+# def solution(a, b, included):
+#     answer = 0
+#     for i in range(len(included)):
+#         if included[i] == True:
+#             answer += a + i * b
+#     return answer
+    
+def solution(num_list):
+    s = sum(num_list)
+    m = 1
+    for num in num_list:
+        m*=num
+        if s**2 < m
+            return 1
+        else:
+            return 0
