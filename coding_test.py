@@ -199,7 +199,7 @@ def solution(storage, num):
     answer = clean_storage[clean_num.index(max_num)]
     return answer
 '''
-
+'''
 a = int(input())
 b = int(input())
 def solution(a, b):
@@ -214,3 +214,6 @@ def solution(a, b):
         return q + w
     elif int(q+w) < 2*e*r:
         return 2*e*r
+    
+'''
+
